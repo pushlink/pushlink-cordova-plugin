@@ -14,6 +14,7 @@ import com.pushlink.android.PushLink;
 import com.pushlink.cordova.actions.PushLinkPluginAction;
 import com.pushlink.cordova.actions.StartAction;
 import com.pushlink.cordova.actions.AddExceptionMetadataAction;
+import com.pushlink.cordova.actions.AddMetadataAction;
 
 public class PushLinkPlugin extends CordovaPlugin {
   public static final String START_ACTION = "startPushLink";
@@ -32,7 +33,7 @@ public class PushLinkPlugin extends CordovaPlugin {
     actions = new HashMap<String, PushLinkPluginAction>();
     actions.put(START_ACTION, new StartAction());
     actions.put(ADD_EXCEPTION_METADATA, new AddExceptionMetadataAction());
-    // actions.put(ADD_METADATA, new StartAction());
+    actions.put(ADD_METADATA, new AddMetadataAction());
     // actions.put(DISABLE_EXCEPTION_NOTIFICATION, new StartAction());
     // actions.put(ENABLE_EXCEPTION_NOTIFICATION, new StartAction());
     // actions.put(SET_CURRENT_STRATEGY, new StartAction());
