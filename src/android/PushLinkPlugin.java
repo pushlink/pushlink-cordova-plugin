@@ -11,6 +11,10 @@ import org.json.JSONException;
 
 import com.pushlink.android.PushLink;
 
+import com.pushlink.cordova.actions.PushLinkPluginAction;
+import com.pushlink.cordova.actions.StartAction;
+import com.pushlink.cordova.actions.AddExceptionMetadataAction;
+
 public class PushLinkPlugin extends CordovaPlugin {
   public static final String START_ACTION = "startPushLink";
   public static final String ADD_EXCEPTION_METADATA = "addExceptionMetadata";
@@ -26,15 +30,15 @@ public class PushLinkPlugin extends CordovaPlugin {
 
   static {
     actions = new HashMap<String, PushLinkPluginAction>();
-    actions.put(START_ACTION, new PushLinkStartAction());
-    actions.put(ADD_EXCEPTION_METADATA, new PushLinkStartAction());
-    actions.put(ADD_METADATA, new PushLinkStartAction());
-    actions.put(DISABLE_EXCEPTION_NOTIFICATION, new PushLinkStartAction());
-    actions.put(ENABLE_EXCEPTION_NOTIFICATION, new PushLinkStartAction());
-    actions.put(SET_CURRENT_STRATEGY, new PushLinkStartAction());
-    actions.put(GET_CURRENT_STRATEGY, new PushLinkStartAction());
-    actions.put(HAS_PENDING_UPDATE, new PushLinkStartAction());
-    actions.put(SET_IDLE, new PushLinkStartAction());
+    actions.put(START_ACTION, new StartAction());
+    actions.put(ADD_EXCEPTION_METADATA, new AddExceptionMetadataAction());
+    // actions.put(ADD_METADATA, new StartAction());
+    // actions.put(DISABLE_EXCEPTION_NOTIFICATION, new StartAction());
+    // actions.put(ENABLE_EXCEPTION_NOTIFICATION, new StartAction());
+    // actions.put(SET_CURRENT_STRATEGY, new StartAction());
+    // actions.put(GET_CURRENT_STRATEGY, new StartAction());
+    // actions.put(HAS_PENDING_UPDATE, new StartAction());
+    // actions.put(SET_IDLE, new StartAction());
   }
 
   @Override

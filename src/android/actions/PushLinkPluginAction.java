@@ -1,4 +1,4 @@
-package com.pushlink.cordova;
+package com.pushlink.cordova.actions;
 
 import android.content.Context;
 import org.apache.cordova.CallbackContext;

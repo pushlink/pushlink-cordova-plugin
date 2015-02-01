@@ -1,4 +1,4 @@
-package com.pushlink.cordova;
+package com.pushlink.cordova.actions;
 
 import android.content.Context;
 import org.apache.cordova.CallbackContext;
@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 import com.pushlink.android.PushLink;
 
-public class PushLinkStartAction implements PushLinkPluginAction {
+public class StartAction implements PushLinkPluginAction {
   private static final String API_KEY = "apiKey";
   private static final String DEVICE_ID = "deviceId";
   private static final String APP_ICON_ID = "appIconId";
