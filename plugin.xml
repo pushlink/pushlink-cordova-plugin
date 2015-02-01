@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.pushlink.cordova" version="5.1.0">
+  <name>PushLink</name>
+  <description>PushLink plugin for PhoneGap</description>
+  <author>PushLink team</author>
+  <license>MIT</license>
+  <keywords>cordova,pushlink,android,update</keywords>
+
+  <js-module src="www/pushlink.js" name="PushLink">
+    <clobbers target="PushLink"/>
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="com.pushlink.android">
+        <param name="android-package" value="com.pushlink.android"/>
+      </feature>
+      <feature name="com.pushlink.cordova.PushLinkPlugin">
+        <param name="android-package" value="com.pushlink.cordova.PushLinkPlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+
+    <source-file src="src/android/PushLinkPlugin.java" target-dir="src/com/pushlink/cordova"/>
+    <source-file src="src/android/PushLinkAndroid-5.1.0.jar" target-dir="libs" framework="true"/>
+  </platform>
+</plugin>
