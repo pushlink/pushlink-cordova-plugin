@@ -33,6 +33,8 @@
     <source-file src="src/android/actions/StartAction.java" target-dir="src/com/pushlink/cordova/actions"/>
     <source-file src="src/android/actions/AddExceptionMetadataAction.java" target-dir="src/com/pushlink/cordova/actions"/>
     <source-file src="src/android/actions/AddMetadataAction.java" target-dir="src/com/pushlink/cordova/actions"/>
+    <source-file src="src/android/actions/DisableExceptionNotificationAction.java" target-dir="src/com/pushlink/cordova/actions"/>
+    <source-file src="src/android/actions/EnableExceptionNotificationAction.java" target-dir="src/com/pushlink/cordova/actions"/>
 
     <source-file src="src/android/PushLinkAndroid-5.1.0.jar" target-dir="libs" framework="true"/>
   </platform>
