@@ -7,9 +7,6 @@ import org.json.JSONObject;
 import com.pushlink.android.PushLink;
 
 public class EnableExceptionNotificationAction implements PushLinkPluginAction {
-  private static final String KEY = "key";
-  private static final String VALUE = "value";
-
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.enableExceptionNotification();
