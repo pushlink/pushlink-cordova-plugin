@@ -20,6 +20,7 @@ import com.pushlink.cordova.actions.EnableExceptionNotificationAction;
 import com.pushlink.cordova.actions.SetIdleAction;
 import com.pushlink.cordova.actions.SetCurrentStrategyAction;
 import com.pushlink.cordova.actions.GetCurrentStrategyAction;
+import com.pushlink.cordova.actions.HasPendingUpdateAction;
 
 public class PushLinkPlugin extends CordovaPlugin {
   public static final String START_ACTION = "startPushLink";
@@ -43,7 +44,7 @@ public class PushLinkPlugin extends CordovaPlugin {
     actions.put(ENABLE_EXCEPTION_NOTIFICATION, new EnableExceptionNotificationAction());
     actions.put(SET_CURRENT_STRATEGY, new SetCurrentStrategyAction());
     actions.put(GET_CURRENT_STRATEGY, new GetCurrentStrategyAction());
-    // actions.put(HAS_PENDING_UPDATE, new StartAction());
+    actions.put(HAS_PENDING_UPDATE, new HasPendingUpdateAction());
     actions.put(SET_IDLE, new SetIdleAction());
   }
 
