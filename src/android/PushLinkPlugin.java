@@ -30,7 +30,7 @@ public class PushLinkPlugin extends CordovaPlugin {
   public static final String ENABLE_EXCEPTION_NOTIFICATION = "enableExceptionNotification";
   public static final String SET_CURRENT_STRATEGY = "setCurrentStrategy";
   public static final String GET_CURRENT_STRATEGY = "getCurrentStrategy";
-  public static final String HAS_PENDING_UPDATE = "hasPengingUpdate";
+  public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
   public static final String SET_IDLE = "idle";
 
   private static final Map<String, PushLinkPluginAction> actions;
