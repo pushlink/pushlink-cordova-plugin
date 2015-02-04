@@ -6,13 +6,21 @@ import org.json.JSONObject;
 
 import com.pushlink.android.PushLink;
 
+import java.lang.reflect.Field;
+
 public class StartAction implements PushLinkPluginAction {
   private static final String API_KEY = "apiKey";
   private static final String DEVICE_ID = "deviceId";
-  private static final String APP_ICON_ID = "appIconId";
+  private static final String PACKAGE_NAME = "packageName";
 
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
-    PushLink.start(context, arg.getInt(APP_ICON_ID), arg.getString(API_KEY), arg.getString(DEVICE_ID));
+    String packageName = arg.getString(PACKAGE_NAME);
+    Class<?> resourceClass = Class.forName(packageName + ".R.drawable");
+    Field f = resourceClass.getField("icon");
+
+    int appIconId = f.getInt(null);
+
+    PushLink.start(context, appIconId, arg.getString(API_KEY), arg.getString(DEVICE_ID));
   }
 }

@@ -10,12 +10,12 @@ var PushLink = function() {
   this.FRIENDLY_POPUP = "FRIENDLY_POPUP";
 };
 
-PushLink.prototype.start = function(appIconId, apiKey, deviceId, successCallback, errorCallback) {
+PushLink.prototype.start = function(packageName, apiKey, deviceId, successCallback, errorCallback) {
   cordovaExec('startPushlink', successCallback, errorCallback, {
-		appIconId: appIconId,
-		apiKey: apiKey,
-		deviceId: deviceId
-	});
+    packageName: packageName,
+    apiKey: apiKey,
+    deviceId: deviceId
+  });
   return this;
 };
 

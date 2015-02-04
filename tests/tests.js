@@ -37,9 +37,9 @@ exports.defineAutoTests = function() {
       expect(PushLink.start).toBeDefined();
       expect(typeof PushLink.start).toBe("function");
 
-      PushLink.start(0, 'api-key', 'device-id', null, null);
+      PushLink.start("com.example", 'api-key', 'device-id', null, null);
 
-      checkCallsPushLink('startPushlink', null, null, {appIconId: 0, apiKey: 'api-key', deviceId: 'device-id'});
+      checkCallsPushLink('startPushlink', null, null, {packageName: "com.example", apiKey: 'api-key', deviceId: 'device-id'});
     });
   });
 
