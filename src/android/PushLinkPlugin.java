@@ -33,6 +33,8 @@ public class PushLinkPlugin extends CordovaPlugin {
   public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
   public static final String SET_IDLE = "idle";
 
+  public static final String VERSION = "5.1.0";
+
   private static final Map<String, PushLinkPluginAction> actions;
 
   static {
@@ -51,11 +53,16 @@ public class PushLinkPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray actionArgs, CallbackContext callbackContext) throws JSONException {
     try {
-      JSONObject args = actionArgs.getJSONObject(0);
+      JSONObject args = actionArgs.length() > 0 ? actionArgs.getJSONObject(0) : null;
 
       if (actions.containsKey(action)) {
         PushLinkPluginAction pluginAction = actions.get(action);
         pluginAction.execute(this.cordova.getActivity(), args, callbackContext);
+        return true;
+      } else if ("version".equals(action)) {
+        JSONObject returnValue = new JSONObject();
+        returnValue.put("version", VERSION);
+        callbackContext.success(returnValue);
         return true;
       } else {
         callbackContext.error("Invalid action: " + action);
