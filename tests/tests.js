@@ -1,5 +1,5 @@
 var checkCallsPushLink = function(action, successCallback, errorCallback, arg) {
-  expect(window.cordova.exec).toHaveBeenCalledWith(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', 'startPushlink', [arg]);  
+  expect(window.cordova.exec).toHaveBeenCalledWith(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', action, [arg]);
 }
 
 exports.defineAutoTests = function() {
@@ -39,7 +39,7 @@ exports.defineAutoTests = function() {
 
       PushLink.start("com.example", 'api-key', 'device-id', null, null);
 
-      checkCallsPushLink('startPushlink', null, null, {packageName: "com.example", apiKey: 'api-key', deviceId: 'device-id'});
+      checkCallsPushLink('start', null, null, {packageName: "com.example", apiKey: 'api-key', deviceId: 'device-id'});
     });
   });
 

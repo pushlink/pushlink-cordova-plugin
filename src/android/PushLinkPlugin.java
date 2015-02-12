@@ -23,7 +23,7 @@ import com.pushlink.cordova.actions.GetCurrentStrategyAction;
 import com.pushlink.cordova.actions.HasPendingUpdateAction;
 
 public class PushLinkPlugin extends CordovaPlugin {
-  public static final String START_ACTION = "startPushLink";
+  public static final String START_ACTION = "start";
   public static final String ADD_EXCEPTION_METADATA = "addExceptionMetadata";
   public static final String ADD_METADATA = "addMetadata";
   public static final String DISABLE_EXCEPTION_NOTIFICATION = "disableExceptionNotification";

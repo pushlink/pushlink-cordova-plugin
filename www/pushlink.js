@@ -11,7 +11,7 @@ var PushLink = function() {
 };
 
 PushLink.prototype.start = function(packageName, apiKey, deviceId, successCallback, errorCallback) {
-  cordovaExec('startPushlink', successCallback, errorCallback, {
+  cordovaExec('start', successCallback, errorCallback, {
     packageName: packageName,
     apiKey: apiKey,
     deviceId: deviceId
@@ -39,8 +39,15 @@ PushLink.prototype.disableExceptionNotification = function(successCallback, erro
   return this;
 };
 
-PushLink.prototype.setCurrentStrategy = function(strategy, successCallback, errorCallback) {
-  cordovaExec('setCurrentStrategy', successCallback, errorCallback, {strategy: strategy});
+PushLink.prototype.setCurrentStrategy = function(strategy, properties, successCallback, errorCallback) {
+  if (typeof properties === 'function') {
+    errorCallback = successCallback;
+    successCallback = properties;
+    properties = {};
+  } else if (typeof properties != 'object') {
+    properties = {};
+  }
+  cordovaExec('setCurrentStrategy', successCallback, errorCallback, {strategy: strategy, properties: properties});
   return this;
 };
 
