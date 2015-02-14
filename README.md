@@ -19,8 +19,3 @@ function(error) {
   console.log('An error occurred.');
 });
 ```
-
-## Testing the plugin
-
-**TODO**
-
