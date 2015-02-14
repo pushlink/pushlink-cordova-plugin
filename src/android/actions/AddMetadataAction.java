@@ -1,6 +1,6 @@
 package com.pushlink.cordova.actions;
 
-import android.content.Context;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
@@ -11,7 +11,7 @@ public class AddMetadataAction implements PushLinkPluginAction {
   private static final String VALUE = "value";
 
   @Override
-  public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
+  public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.addMetadata(arg.getString(KEY), arg.getString(VALUE));
     callbackContext.success();
   }

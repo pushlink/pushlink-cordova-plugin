@@ -60,7 +60,7 @@ public class PushLinkPlugin extends CordovaPlugin {
 
       if (actions.containsKey(action)) {
         PushLinkPluginAction pluginAction = actions.get(action);
-        pluginAction.execute(this.cordova.getActivity(), args, callbackContext);
+        pluginAction.execute(this.cordova, args, callbackContext);
         return true;
       } else if ("version".equals(action)) {
         JSONObject returnValue = new JSONObject();

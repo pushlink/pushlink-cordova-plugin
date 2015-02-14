@@ -1,6 +1,6 @@
 package com.pushlink.cordova.actions;
 
-import android.content.Context;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
@@ -22,7 +22,7 @@ public class SetCurrentStrategyAction implements PushLinkPluginAction {
   private static final String STATUS_BAR_DESCRIPTION = "statusBarDescription";
 
   @Override
-  public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
+  public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
     String strategyName = arg.getString(STRATEGY);
     JSONObject properties = arg.getJSONObject(PROPERTIES);
     StrategyEnum se = Enum.valueOf(StrategyEnum.class, strategyName);

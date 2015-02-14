@@ -1,6 +1,6 @@
 package com.pushlink.cordova.actions;
 
-import android.content.Context;
+import org.apache.cordova.CordovaInterface;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import com.pushlink.android.PushLink;
 
 public class HasPendingUpdateAction implements PushLinkPluginAction {
   @Override
-  public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
+  public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
     Boolean hasPendingUpdate = PushLink.hasPengingUpdate();
     Map<String, Object> result = new HashMap<String, Object>();
     result.put("hasPendingUpdate", hasPendingUpdate);

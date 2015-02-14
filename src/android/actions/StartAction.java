@@ -1,6 +1,6 @@
 package com.pushlink.cordova.actions;
 
-import android.content.Context;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
@@ -15,11 +15,22 @@ public class StartAction implements PushLinkPluginAction {
   private static final String ICON = "icon";
 
   @Override
-  public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
-    String packageName = arg.getString(PACKAGE_NAME);
-    int appIconId = context.getResources().getIdentifier(ICON, "drawable", packageName);
+  public void execute(final CordovaInterface cordova, JSONObject arg, final CallbackContext callbackContext) throws Exception {
+    final String packageName = arg.getString(PACKAGE_NAME);
+    final String apiKey = arg.getString(API_KEY);
+    final String deviceId = arg.getString(DEVICE_ID);
+    final int appIconId = cordova.getActivity().getResources().getIdentifier(ICON, "drawable", packageName);
 
-    PushLink.start(context, appIconId, arg.getString(API_KEY), arg.getString(DEVICE_ID));
-    callbackContext.success();
+    cordova.getActivity().runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          PushLink.start(cordova.getActivity(), appIconId, apiKey, deviceId);
+          callbackContext.success();
+        } catch(Exception e) {
+          callbackContext.error(e.getMessage());
+        }
+      }
+    });
   }
 }

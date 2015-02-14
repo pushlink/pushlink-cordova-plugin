@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import android.content.Context;
+import org.apache.cordova.CordovaInterface;
 import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
@@ -22,7 +22,7 @@ import com.pushlink.android.StatusBarStrategy;
 
 public class GetCurrentStrategyAction implements PushLinkPluginAction {
   @Override
-  public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
+  public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
     Strategy strategy = PushLink.getCurrentStrategy();
     Map<String, Object> properties = beanToMap(strategy);
 
