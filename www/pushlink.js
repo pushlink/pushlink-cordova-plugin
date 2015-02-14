@@ -11,7 +11,7 @@ var cordovaExec = function(action, successCallback, errorCallback, arg) {
 /**
  * The PushLink object
  * @constructor
- * @see module:PushLink
+ * @exports PushLink
  */
 var PushLink = function() {
   this.NINJA = "NINJA";
@@ -27,7 +27,6 @@ var PushLink = function() {
  * @param {string} deviceId - The device id
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
- * @alias module:PushLink.start
  */
 PushLink.prototype.start = function(packageName, apiKey, deviceId, successCallback, errorCallback) {
   cordovaExec('start', successCallback, errorCallback, {
