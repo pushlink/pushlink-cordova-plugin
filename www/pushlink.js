@@ -14,9 +14,16 @@ var cordovaExec = function(action, successCallback, errorCallback, arg) {
  * @exports PushLink
  */
 var PushLink = function() {
+  /** The NINJA strategy */
   this.NINJA = "NINJA";
+
+  /** The STATUS_BAR strategy */
   this.STATUS_BAR = "STATUS_BAR";
+
+  /** The ANNOYING_POPUP strategy */
   this.ANNOYING_POPUP = "ANNOYING_POPUP";
+
+  /** The FRIENDLY_POPUP strategy */
   this.FRIENDLY_POPUP = "FRIENDLY_POPUP";
 };
 
