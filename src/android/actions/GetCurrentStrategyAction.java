@@ -49,9 +49,10 @@ public class GetCurrentStrategyAction implements PushLinkPluginAction {
     for (Method m : methods) {
       if (m.getName().startsWith("get") && m.getParameterTypes().length == 0 && !m.isVarArgs()) {
         try {
-          map.put(m.getName(), m.invoke(bean));
+          String key = m.getName().substring(3, 4).toLowerCase() + m.getName().substring(4);
+          map.put(key, m.invoke(bean));
         } catch (InvocationTargetException e) {
-          Log.e("PushLink|GetCurrentStrategyAction", "Exception trying to invoke method " + m.getName(), e);
+          Log.e("PushLinkPlugin|GetCurrentStrategyAction", "Exception trying to invoke method " + m.getName(), e);
         }
       }
     }
