@@ -13,5 +13,6 @@ public class AddMetadataAction implements PushLinkPluginAction {
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.addMetadata(arg.getString(KEY), arg.getString(VALUE));
+    callbackContext.success();
   }
 }

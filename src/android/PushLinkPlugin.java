@@ -21,8 +21,11 @@ import com.pushlink.cordova.actions.SetIdleAction;
 import com.pushlink.cordova.actions.SetCurrentStrategyAction;
 import com.pushlink.cordova.actions.GetCurrentStrategyAction;
 import com.pushlink.cordova.actions.HasPendingUpdateAction;
+import android.util.Log;
 
 public class PushLinkPlugin extends CordovaPlugin {
+  private static final String TAG = "PushLinkPlugin";
+
   public static final String START_ACTION = "start";
   public static final String ADD_EXCEPTION_METADATA = "addExceptionMetadata";
   public static final String ADD_METADATA = "addMetadata";
@@ -69,7 +72,7 @@ public class PushLinkPlugin extends CordovaPlugin {
         return false;
       }
     } catch (Exception e) {
-      System.err.println("Exception: " + e.getMessage());
+      Log.e(TAG, "Exception: " + e.getMessage(), e);
       callbackContext.error(e.getMessage());
       return false;
     }

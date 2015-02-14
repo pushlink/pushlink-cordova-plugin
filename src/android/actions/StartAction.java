@@ -22,5 +22,6 @@ public class StartAction implements PushLinkPluginAction {
     int appIconId = f.getInt(null);
 
     PushLink.start(context, appIconId, arg.getString(API_KEY), arg.getString(DEVICE_ID));
+    callbackContext.success();
   }
 }

@@ -13,5 +13,6 @@ public class AddExceptionMetadataAction implements PushLinkPluginAction {
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.addExceptionMetadata(arg.getString(KEY), arg.getString(VALUE));
+    callbackContext.success();
   }
 }

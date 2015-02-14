@@ -12,5 +12,6 @@ public class SetIdleAction implements PushLinkPluginAction {
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.idle(arg.getBoolean(IDLE));
+    callbackContext.success();
   }
 }

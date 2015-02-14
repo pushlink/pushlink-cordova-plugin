@@ -10,5 +10,6 @@ public class EnableExceptionNotificationAction implements PushLinkPluginAction {
   @Override
   public void execute(Context context, JSONObject arg, CallbackContext callbackContext) throws Exception {
     PushLink.enableExceptionNotification();
+    callbackContext.success();
   }
 }

@@ -75,5 +75,6 @@ public class SetCurrentStrategyAction implements PushLinkPluginAction {
         // no properties to be set
       break;
     }
+    callbackContext.success();
   }
 }
