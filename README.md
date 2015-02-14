@@ -19,3 +19,9 @@ function(error) {
   console.log('An error occurred.');
 });
 ```
+
+## Help & Support
+
+Always feel free to drop a line to support at pushlink dot com or visit our [support](https://www.push-link.com/support.xhtml).
+
+Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-phonegap/issues) and [pull requests](https://github.com/pushlink/pushlink-phonegap/pulls)
