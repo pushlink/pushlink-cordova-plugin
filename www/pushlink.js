@@ -14,16 +14,24 @@ var cordovaExec = function(action, successCallback, errorCallback, arg) {
  * @exports PushLink
  */
 var PushLink = function() {
-  /** The NINJA strategy */
+  /** The NINJA strategy 
+   * @see module:PushLink#setCurrentStrategy
+   */
   this.NINJA = "NINJA";
 
-  /** The STATUS_BAR strategy */
+  /** The STATUS_BAR strategy 
+   * @see module:PushLink#setCurrentStrategy
+   */
   this.STATUS_BAR = "STATUS_BAR";
 
-  /** The ANNOYING_POPUP strategy */
+  /** The ANNOYING_POPUP strategy 
+   * @see module:PushLink#setCurrentStrategy
+   */
   this.ANNOYING_POPUP = "ANNOYING_POPUP";
 
-  /** The FRIENDLY_POPUP strategy */
+  /** The FRIENDLY_POPUP strategy 
+   * @see module:PushLink#setCurrentStrategy
+   */
   this.FRIENDLY_POPUP = "FRIENDLY_POPUP";
 };
 
@@ -96,6 +104,10 @@ PushLink.prototype.disableExceptionNotification = function(successCallback, erro
  * @param {object} properties - the properties for the current strategy **TODO describe the objects**
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
+ * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/AnnoyingPopUpStrategy.html|ANNOYING_POPUP} strategy properties
+ * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/FriendlyPopUpStrategy.html|FRIENDLY_POPUP} strategy properties
+ * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/StatusBarStrategy.html|STATUS_BAR} strategy properties
+ * @see NINJA pop-up has no properties to be set.
  */
 PushLink.prototype.setCurrentStrategy = function(strategy, properties, successCallback, errorCallback) {
   if (typeof properties === 'function') {
