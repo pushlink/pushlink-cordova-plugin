@@ -36,7 +36,7 @@ public class PushLinkPlugin extends CordovaPlugin {
   public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
   public static final String SET_IDLE = "idle";
 
-  public static final String VERSION = "5.1.0";
+  public static final String VERSION = "5.1.1";
 
   private static final Map<String, PushLinkPluginAction> actions;
 
