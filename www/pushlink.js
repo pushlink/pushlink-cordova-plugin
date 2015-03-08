@@ -8,6 +8,10 @@ var cordovaExec = function(action, successCallback, errorCallback, arg) {
   cordova.exec(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', action, args);
 }
 
+var pushLinkOnResumeCallback = function() {
+  cordovaExec('setCurrentActivity');
+}
+
 /**
  * The PushLink object
  * @constructor
@@ -117,7 +121,15 @@ PushLink.prototype.setCurrentStrategy = function(strategy, properties, successCa
   } else if (typeof properties != 'object') {
     properties = {};
   }
+
+  if (strategy === PushLink.ANNOYING_POPUP || strategy === PushLink.FRIENDLY_POPUP) {
+    document.addEventListener('resume', pushLinkOnResumeCallback, false);
+  } else {
+    document.removeEventListener('resume', pushLinkOnResumeCallback, false);
+  }
+
   cordovaExec('setCurrentStrategy', successCallback, errorCallback, {strategy: strategy, properties: properties});
+
   return this;
 };
 

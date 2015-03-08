@@ -39,6 +39,7 @@
     <source-file src="src/android/actions/SetCurrentStrategyAction.java" target-dir="src/com/pushlink/cordova/actions"/>
     <source-file src="src/android/actions/GetCurrentStrategyAction.java" target-dir="src/com/pushlink/cordova/actions"/>
     <source-file src="src/android/actions/HasPendingUpdateAction.java" target-dir="src/com/pushlink/cordova/actions"/>
+    <source-file src="src/android/actions/SetCurrentActivityAction.java" target-dir="src/com/pushlink/cordova/actions"/>
 
     <source-file src="src/android/PushLinkAndroid-5.1.0.jar" target-dir="libs" framework="true"/>
   </platform>

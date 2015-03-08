@@ -21,6 +21,7 @@ import com.pushlink.cordova.actions.SetIdleAction;
 import com.pushlink.cordova.actions.SetCurrentStrategyAction;
 import com.pushlink.cordova.actions.GetCurrentStrategyAction;
 import com.pushlink.cordova.actions.HasPendingUpdateAction;
+import com.pushlink.cordova.actions.SetCurrentActivityAction;
 import android.util.Log;
 
 public class PushLinkPlugin extends CordovaPlugin {
@@ -33,6 +34,7 @@ public class PushLinkPlugin extends CordovaPlugin {
   public static final String ENABLE_EXCEPTION_NOTIFICATION = "enableExceptionNotification";
   public static final String SET_CURRENT_STRATEGY = "setCurrentStrategy";
   public static final String GET_CURRENT_STRATEGY = "getCurrentStrategy";
+  public static final String SET_CURRENT_ACTIVITY = "setCurrentActivity";
   public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
   public static final String SET_IDLE = "idle";
 
@@ -51,6 +53,7 @@ public class PushLinkPlugin extends CordovaPlugin {
     actions.put(GET_CURRENT_STRATEGY, new GetCurrentStrategyAction());
     actions.put(HAS_PENDING_UPDATE, new HasPendingUpdateAction());
     actions.put(SET_IDLE, new SetIdleAction());
+    actions.put(SET_CURRENT_ACTIVITY, new SetCurrentActivityAction());
   }
 
   @Override
