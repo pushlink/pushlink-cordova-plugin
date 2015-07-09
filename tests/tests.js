@@ -1,3 +1,5 @@
+/* eslint-env jasmine */
+
 var checkCallsPushLink = function(action, successCallback, errorCallback, arg) {
   expect(window.cordova.exec).toHaveBeenCalledWith(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', action, [arg]);
 }
@@ -5,13 +7,13 @@ var checkCallsPushLink = function(action, successCallback, errorCallback, arg) {
 exports.defineAutoTests = function() {
   describe("PushLink object (window.PushLink)", function() {
     it("should exists", function() {
-      expect(window.PushLink).toBeDefined(); 
+      expect(window.PushLink).toBeDefined();
       expect(typeof window.PushLink).toBe("object");
     });
 
     it("should return the right version", function(done) {
       PushLink.getVersion(function(data) {
-        expect(data.version).toBe('5.1.1');
+        expect(data.version).toBe('5.3.0');
         done();
       },
       function() {
