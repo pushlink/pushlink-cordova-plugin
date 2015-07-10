@@ -1,0 +1,26 @@
+{
+  "name": "pushlink-phonegap",
+  "version": "5.3.0",
+  "description": "## Installation",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushlink/pushlink-phonegap.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushlink/pushlink-phonegap/issues"
+  },
+  "homepage": "https://github.com/pushlink/pushlink-phonegap#readme",
+  "devDependencies": {
+    "eslint": "^0.24.0"
+  }
+}
