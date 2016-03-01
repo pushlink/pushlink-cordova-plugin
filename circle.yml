@@ -13,8 +13,8 @@ test:
     - echo y | android update sdk --no-ui --all --filter "addon-google_apis-google-19, sys-img-armeabi-v7a-addon-google_apis-google-19"
     - android create avd --force -n test -t "Google Inc.:Google APIs:19" --abi armeabi-v7a
     - emulator -avd test -no-audio -no-window:
-      background: true
-      parallel: true
+        background: true
+        parallel: true
     - circle-android wait-for-boot
 
   override:
