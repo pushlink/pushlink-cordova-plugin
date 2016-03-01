@@ -11,15 +11,15 @@ import com.pushlink.android.FriendlyPopUpStrategy;
 import com.pushlink.android.StatusBarStrategy;
 
 public class SetCurrentStrategyAction implements PushLinkPluginAction {
-  private static final String STRATEGY = 'strategy';
-  private static final String PROPERTIES = 'properties';
+  private static final String STRATEGY = "strategy";
+  private static final String PROPERTIES = "properties";
 
-  private static final String REMINDER_TIME = 'reminderTimeInSeconds';
-  private static final String POPUP_MESSAGE = 'popUpMessage';
-  private static final String UPDATE_BUTTON = 'updateButton';
-  private static final String NOT_NOW_BUTTON = 'notNowButton';
-  private static final String STATUS_BAR_TITLE = 'statusBarTitle';
-  private static final String STATUS_BAR_DESCRIPTION = 'statusBarDescription';
+  private static final String REMINDER_TIME = "reminderTimeInSeconds";
+  private static final String POPUP_MESSAGE = "popUpMessage";
+  private static final String UPDATE_BUTTON = "updateButton";
+  private static final String NOT_NOW_BUTTON = "notNowButton";
+  private static final String STATUS_BAR_TITLE = "statusBarTitle";
+  private static final String STATUS_BAR_DESCRIPTION = "statusBarDescription";
 
   @Override
   public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {

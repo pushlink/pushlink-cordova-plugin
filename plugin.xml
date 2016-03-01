@@ -14,6 +14,8 @@
 
   <platform name='android'>
     <config-file target='res/xml/config.xml' parent='/*'>
+      <allow-navigation href="https://www.pushlink.com/*" />
+      <allow-navigation href="https://www.push-link.com/*" />
       <feature name='com.pushlink.android'>
         <param name='android-package' value='com.pushlink.android'/>
       </feature>
