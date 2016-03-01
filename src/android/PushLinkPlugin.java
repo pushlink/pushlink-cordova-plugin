@@ -25,20 +25,20 @@ import com.pushlink.cordova.actions.SetCurrentActivityAction;
 import android.util.Log;
 
 public class PushLinkPlugin extends CordovaPlugin {
-  private static final String TAG = "PushLinkPlugin";
+  private static final String TAG = 'PushLinkPlugin';
 
-  public static final String START_ACTION = "start";
-  public static final String ADD_EXCEPTION_METADATA = "addExceptionMetadata";
-  public static final String ADD_METADATA = "addMetadata";
-  public static final String DISABLE_EXCEPTION_NOTIFICATION = "disableExceptionNotification";
-  public static final String ENABLE_EXCEPTION_NOTIFICATION = "enableExceptionNotification";
-  public static final String SET_CURRENT_STRATEGY = "setCurrentStrategy";
-  public static final String GET_CURRENT_STRATEGY = "getCurrentStrategy";
-  public static final String SET_CURRENT_ACTIVITY = "setCurrentActivity";
-  public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
-  public static final String SET_IDLE = "idle";
+  public static final String START_ACTION = 'start';
+  public static final String ADD_EXCEPTION_METADATA = 'addExceptionMetadata';
+  public static final String ADD_METADATA = 'addMetadata';
+  public static final String DISABLE_EXCEPTION_NOTIFICATION = 'disableExceptionNotification';
+  public static final String ENABLE_EXCEPTION_NOTIFICATION = 'enableExceptionNotification';
+  public static final String SET_CURRENT_STRATEGY = 'setCurrentStrategy';
+  public static final String GET_CURRENT_STRATEGY = 'getCurrentStrategy';
+  public static final String SET_CURRENT_ACTIVITY = 'setCurrentActivity';
+  public static final String HAS_PENDING_UPDATE = 'hasPendingUpdate';
+  public static final String SET_IDLE = 'idle';
 
-  public static final String VERSION = "5.3.0";
+  public static final String VERSION = '5.3.0';
 
   private static final Map<String, PushLinkPluginAction> actions;
 
@@ -65,17 +65,17 @@ public class PushLinkPlugin extends CordovaPlugin {
         PushLinkPluginAction pluginAction = actions.get(action);
         pluginAction.execute(this.cordova, args, callbackContext);
         return true;
-      } else if ("version".equals(action)) {
+      } else if ('version'.equals(action)) {
         JSONObject returnValue = new JSONObject();
-        returnValue.put("version", VERSION);
+        returnValue.put('version', VERSION);
         callbackContext.success(returnValue);
         return true;
       } else {
-        callbackContext.error("Invalid action: " + action);
+        callbackContext.error('Invalid action: ' + action);
         return false;
       }
     } catch (Exception e) {
-      Log.e(TAG, "Exception: " + e.getMessage(), e);
+      Log.e(TAG, 'Exception: ' + e.getMessage(), e);
       callbackContext.error(e.getMessage());
       return false;
     }

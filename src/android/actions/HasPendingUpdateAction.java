@@ -15,7 +15,7 @@ public class HasPendingUpdateAction implements PushLinkPluginAction {
   public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
     Boolean hasPendingUpdate = PushLink.hasPengingUpdate();
     Map<String, Object> result = new HashMap<String, Object>();
-    result.put("hasPendingUpdate", hasPendingUpdate);
+    result.put('hasPendingUpdate', hasPendingUpdate);
 
     callbackContext.success(new JSONObject(result));
   }

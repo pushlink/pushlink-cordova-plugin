@@ -27,15 +27,15 @@ public class GetCurrentStrategyAction implements PushLinkPluginAction {
     Map<String, Object> properties = beanToMap(strategy);
 
     if (strategy instanceof AnnoyingPopUpStrategy) {
-      properties.put("type", StrategyEnum.ANNOYING_POPUP.name());
+      properties.put('type', StrategyEnum.ANNOYING_POPUP.name());
     } else if (strategy instanceof FriendlyPopUpStrategy) {
-      properties.put("type", StrategyEnum.FRIENDLY_POPUP.name());
+      properties.put('type', StrategyEnum.FRIENDLY_POPUP.name());
     } else if (strategy instanceof NinjaStrategy) {
-      properties.put("type", StrategyEnum.NINJA.name());
+      properties.put('type', StrategyEnum.NINJA.name());
     } else if (strategy instanceof StatusBarStrategy) {
-      properties.put("type", StrategyEnum.STATUS_BAR.name());
+      properties.put('type', StrategyEnum.STATUS_BAR.name());
     } else {
-      throw new IllegalStateException("Unknown strategy");
+      throw new IllegalStateException('Unknown strategy');
     }
 
     JSONObject returnValue = new JSONObject(properties);
@@ -47,12 +47,12 @@ public class GetCurrentStrategyAction implements PushLinkPluginAction {
 
     Method[] methods = bean.getClass().getMethods();
     for (Method m : methods) {
-      if (m.getName().startsWith("get") && m.getParameterTypes().length == 0 && !m.isVarArgs()) {
+      if (m.getName().startsWith('get') && m.getParameterTypes().length == 0 && !m.isVarArgs()) {
         try {
           String key = m.getName().substring(3, 4).toLowerCase() + m.getName().substring(4);
           map.put(key, m.invoke(bean));
         } catch (InvocationTargetException e) {
-          Log.e("PushLinkPlugin|GetCurrentStrategyAction", "Exception trying to invoke method " + m.getName(), e);
+          Log.e('PushLinkPlugin|GetCurrentStrategyAction', 'Exception trying to invoke method ' + m.getName(), e);
         }
       }
     }
