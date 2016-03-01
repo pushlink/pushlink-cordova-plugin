@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import com.pushlink.android.PushLink;
 
 public class SetIdleAction implements PushLinkPluginAction {
-  private static final String IDLE = "idle";
+  private static final String IDLE = 'idle';
 
   @Override
   public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
