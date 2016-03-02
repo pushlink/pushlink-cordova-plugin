@@ -17,7 +17,7 @@ exports.defineAutoTests = function() {
 
     it('should return the right version', function(done) {
       PushLink.getVersion(function(data) {
-        expect(data.version).toBe('5.4.3');
+        expect(data.version).toBe('5.4.4');
         done();
       },
       function() {

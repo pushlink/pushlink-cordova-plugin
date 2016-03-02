@@ -1,0 +1,7 @@
+repositories {
+  maven { url "https://jitpack.io" }
+}
+
+dependencies {
+  compile "com.pushlink:pushlink-android:5.4.4"
+}
