@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns='http://apache.org/cordova/ns/plugins/1.0'
         xmlns:android='http://schemas.android.com/apk/res/android'
-        id='com.pushlink.cordova' version='5.3.0'>
+        id='com.pushlink.cordova' version='5.4.4'>
   <name>PushLink</name>
   <description>PushLink plugin for Cordova/PhoneGap</description>
   <author>PushLink (support@pushlink.com)</author>
@@ -11,6 +11,11 @@
   <js-module src='www/pushlink.js' name='PushLink'>
     <clobbers target='PushLink'/>
   </js-module>
+
+  <engines>
+    <engine name="cordova-android" version=">=4"/>
+    <engine name="cordova-plugman" version=">=4.2.0"/><!-- needed for gradleReference support -->
+  </engines>
 
   <platform name='android'>
     <config-file target='res/xml/config.xml' parent='/*'>
@@ -42,7 +47,6 @@
     <source-file src='src/android/actions/GetCurrentStrategyAction.java' target-dir='src/com/pushlink/cordova/actions'/>
     <source-file src='src/android/actions/HasPendingUpdateAction.java' target-dir='src/com/pushlink/cordova/actions'/>
     <source-file src='src/android/actions/SetCurrentActivityAction.java' target-dir='src/com/pushlink/cordova/actions'/>
-
-    <source-file src='src/android/PushLinkAndroid-5.3.0.jar' target-dir='libs' framework='true'/>
+    <framework src='src/android/pushlink-android.gradle' custom='true' type='gradleReference'/>
   </platform>
 </plugin>

@@ -3,8 +3,7 @@ package com.pushlink.cordova;
 import java.util.Map;
 import java.util.HashMap;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.*;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,7 +37,7 @@ public class PushLinkPlugin extends CordovaPlugin {
   public static final String HAS_PENDING_UPDATE = "hasPendingUpdate";
   public static final String SET_IDLE = "idle";
 
-  public static final String VERSION = "5.4.3";
+  public static final String VERSION = "5.4.4";
 
   private static final Map<String, PushLinkPluginAction> actions;
 
@@ -54,6 +53,12 @@ public class PushLinkPlugin extends CordovaPlugin {
     actions.put(HAS_PENDING_UPDATE, new HasPendingUpdateAction());
     actions.put(SET_IDLE, new SetIdleAction());
     actions.put(SET_CURRENT_ACTIVITY, new SetCurrentActivityAction());
+  }
+
+  @Override
+  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+    super.initialize(cordova, webView);
+    Log.i(TAG, "initializing plugin v" + VERSION);
   }
 
   @Override
