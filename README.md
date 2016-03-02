@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-$ phonegap plugin add com.pushlink.cordova
+$ phonegap plugin add pushlink-cordova-plugin
 ```
 ## Usage
 
