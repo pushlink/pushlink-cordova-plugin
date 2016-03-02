@@ -1,8 +1,13 @@
 {
-  "name": "pushlink-phonegap",
+  "name": "pushlink-cordova-plugin",
   "version": "5.4.4",
-  "description": "## Installation",
-  "main": "index.js",
+  "description": "PushLink plugin for Cordova/PhoneGap",
+  "cordova": {
+    "id": "pushlink-cordova-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
   "directories": {
     "doc": "docs",
     "test": "tests"
@@ -11,21 +16,44 @@
     "test": "cordova-paramedic --platform android --plugin . --verbose",
     "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pushlink/pushlink-phonegap.git"
+  "dependencies": {
+    "cordova": "^6.0.0"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pushlink/pushlink-phonegap/issues"
-  },
-  "homepage": "https://github.com/pushlink/pushlink-phonegap#readme",
+
   "devDependencies": {
     "cordova-paramedic": "^0.5.0",
     "eslint": "^0.24.0"
   },
-  "dependencies": {
-    "cordova": "^6.0.0"
-  }
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushlink/pushlink-phonegap.git"
+  },
+
+  "keywords": [
+    "cordova",
+    "pushlink",
+    "android",
+    "update",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+  
+  "author": "Rodolfo Carvalho <rodolfo.ueg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushlink/pushlink-phonegap/issues"
+  },
+  "homepage": "https://github.com/pushlink/pushlink-phonegap#readme"
 }
