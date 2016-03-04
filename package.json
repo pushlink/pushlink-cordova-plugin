@@ -14,22 +14,23 @@
   },
   "scripts": {
     "test": "cordova-paramedic --platform android --plugin . --verbose",
-    "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild"
+    "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild",
+    "preversion": "npm test && ./gendocs.sh && git add -A docs",
+    "version": "./bin/bump-version && git add -A plugin.xml tests/ src/"
   },
   "dependencies": {
     "cordova": "^6.0.0"
   },
-
   "devDependencies": {
     "cordova-paramedic": "^0.5.0",
-    "eslint": "^0.24.0"
+    "eslint": "^0.24.0",
+    "lodash": "^4.6.1",
+    "xml2js": "^0.4.16"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pushlink/pushlink-phonegap.git"
   },
-
   "keywords": [
     "cordova",
     "pushlink",
@@ -38,7 +39,6 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-
   "engines": [
     {
       "name": "cordova-android",
@@ -49,7 +49,6 @@
       "version": ">=4.2.0"
     }
   ],
-  
   "author": "Rodolfo Carvalho <rodolfo.ueg@gmail.com>",
   "license": "MIT",
   "bugs": {

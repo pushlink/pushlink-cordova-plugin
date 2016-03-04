@@ -14,18 +14,6 @@ exports.defineAutoTests = function() {
       expect(window.PushLink).toBeDefined();
       expect(typeof window.PushLink).toBe('object');
     });
-
-    it('should return the right version', function(done) {
-      PushLink.getVersion(function(data) {
-        expect(data.version).toBe('5.4.4');
-        done();
-      },
-      function() {
-        console.error(arguments);
-        jasmine.fail('Test failed');
-        done();
-      });
-    });
   });
 
   describe('PushLink service calls', function() {
