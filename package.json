@@ -15,8 +15,8 @@
   "scripts": {
     "test": "cordova-paramedic --platform android --plugin . --verbose",
     "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild",
-    "preversion": "npm test && ./gendocs.sh && git add -A docs",
-    "version": "./bin/bump-version && git add -A plugin.xml tests/ src/"
+    "build:docs": "rm -rf docs/ && jsdoc www/pushlink.js --pedantic --verbose --debug -R README.md -d docs",
+    "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/"
   },
   "dependencies": {
     "cordova": "^6.0.0"
@@ -24,6 +24,7 @@
   "devDependencies": {
     "cordova-paramedic": "^0.5.0",
     "eslint": "^0.24.0",
+    "jsdoc": "^3.4.0",
     "lodash": "^4.6.1",
     "xml2js": "^0.4.16"
   },
