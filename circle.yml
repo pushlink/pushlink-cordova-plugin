@@ -18,7 +18,7 @@ dependencies:
   cache_directories:
     - "~/.yarn-cache"
   override:
-    - yarn install
+    - npm install
 
 test:
   pre:
@@ -28,4 +28,4 @@ test:
     - circle-android wait-for-boot
 
   override:
-    - yarn test
+    - npm test
