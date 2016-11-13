@@ -3,6 +3,8 @@ machine:
     - mkdir ~/.yarn-cache
   node:
     version: 6.9.1
+  java:
+    version: oraclejdk8
   environment:
     ADNDROID_NDK_HOME: $ANDROID_NDK
     NODE_ENV: test
