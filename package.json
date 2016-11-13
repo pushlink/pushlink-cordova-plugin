@@ -1,6 +1,6 @@
 {
   "name": "pushlink-cordova-plugin",
-  "version": "5.5.0",
+  "version": "5.5.2",
   "description": "PushLink plugin for Cordova/PhoneGap",
   "cordova": {
     "id": "pushlink-cordova-plugin",
