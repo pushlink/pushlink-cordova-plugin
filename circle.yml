@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.0.0
+    version: 6.9.1
   environment:
     ADNDROID_NDK_HOME: $ANDROID_NDK
     NODE_ENV: test
