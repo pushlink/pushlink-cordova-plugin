@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="pushlink-cordova-plugin-tests"
-        version="5.5.0-dev">
+        version="5.5.0-1-dev">
   <name>PushLink Cordova Plugin Tests</name>
   <license>MIT</license>
   <js-module src="tests.js" name="tests">
