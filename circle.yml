@@ -3,6 +3,8 @@ machine:
     ADNDROID_NDK_HOME: $ANDROID_NDK
     NODE_ENV: test
     PATH: $PATH:$HOME/$CIRCLE_PROJECT_REPONAME/node_modules/.bin
+  java:
+    version: oraclejdk8
 
 dependencies:
   override:
