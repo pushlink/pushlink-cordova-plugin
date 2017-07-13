@@ -44,17 +44,15 @@ var PushLink = function() {
 
 /**
  * Starts PushLink connection
- * @param {string} packageName - The package name for the app
  * @param {string} apiKey - Your PushLink API key
  * @param {string} deviceId - The device id
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.start = function(packageName, apiKey, deviceId, successCallback, errorCallback) {
+PushLink.prototype.start = function(apiKey, deviceId, successCallback, errorCallback) {
   'use strict';
 
   cordovaExec('start', successCallback, errorCallback, {
-    packageName: packageName,
     apiKey: apiKey,
     deviceId: deviceId
   });
