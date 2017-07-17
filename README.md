@@ -5,6 +5,17 @@
 ```
 $ phonegap plugin add pushlink-cordova-plugin
 ```
+
+## Compatibility Matrix
+
+| Jar File | Cordova| Comments|
+| ------------- |:-------------:|-------------:|
+| pushlink-android-5.5.2 | `Not released yet` |  |
+| pushlink-android-5.5.0 | pushlink-phonegap-6.0.0 | [Fixed for Android 6](https://github.com/pushlink/pushlink-phonegap/releases/tag/6.0.0) |
+| pushlink-android-5.5.0 | pushlink-phonegap-5.5.0 |  |
+| pushlink-android-5.4.4 | pushlink-phonegap-5.4.4 |  |
+
+
 ## Usage
 
 The plugin exposes a global `window.PushLink` object, so there is no need to instantiate an object.
@@ -21,7 +32,6 @@ function(error) {
 ```
 
 Full [Working sample ](https://github.com/pushlink/pushlink-phonegap-sample).
-
 
 ## Help & Support
 
