@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
 public class StartAction implements PushLinkPluginAction {
   private static final String API_KEY = "apiKey";
   private static final String DEVICE_ID = "deviceId";
+  private static final String PACKAGE_NAME = "packageName";
   private static final String ICON = "icon";
 
   private static final String RESOURCE_DRAWABLE = "drawable";
@@ -23,7 +24,10 @@ public class StartAction implements PushLinkPluginAction {
     
     final String apiKey = arg.getString(API_KEY);
     final String deviceId = arg.getString(DEVICE_ID);
-    final String packageName = cordova.getActivity().getApplicationContext().getPackageName();
+    
+    boolean isPackageNameSet =  arg.has(PACKAGE_NAME);
+
+    final String packageName = isPackageNameSet ? arg.getString(PACKAGE_NAME) : cordova.getActivity().getApplicationContext().getPackageName();
 
     int iconId = cordova.getActivity().getResources().getIdentifier(ICON, RESOURCE_DRAWABLE, packageName);
     if (iconId==0){
