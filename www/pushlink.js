@@ -44,19 +44,32 @@ var PushLink = function() {
 
 /**
  * Starts PushLink connection
+ * @param {string} packageName - The package name for the app (optional)
  * @param {string} apiKey - Your PushLink API key
  * @param {string} deviceId - The device id
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.start = function(apiKey, deviceId, successCallback, errorCallback) {
+PushLink.prototype.start = function(packageName,apiKey, deviceId, successCallback, errorCallback) {
   'use strict';
 
+  if (!errorCallback){
+    
+    //then we are not passing package name
+    cordovaExec('start', deviceId, successCallback, {
+      apiKey: packageName,
+      deviceId: apiKey
+    });
+    return this;
+  }
+
+  console.warn("calling start with packageName parameter is deprecated, check documentation");
   cordovaExec('start', successCallback, errorCallback, {
-    apiKey: apiKey,
-    deviceId: deviceId
-  });
-  return this;
+      packageName: packageName,
+      apiKey: apiKey,
+      deviceId: deviceId
+    });
+    return this;
 };
 
 /**

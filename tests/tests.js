@@ -27,16 +27,36 @@ exports.defineAutoTests = function() {
       window.cordova = realCordova;
     });
 
-    it('should start the service', function() {
+    it('should start the service with no package name', function() {
       expect(PushLink.start).toBeDefined();
       expect(typeof PushLink.start).toBe('function');
 
-      PushLink.start('api-key', 'device-id', null, null);
+      var successCallback = function(){};
+      var errorCallback = function(){};
+      
+      PushLink.start('api-key', 'device-id', successCallback, errorCallback);
 
-      checkCallsPushLink('start', null, null, {
+      checkCallsPushLink('start', successCallback, errorCallback, {
         apiKey: 'api-key',
         deviceId: 'device-id'
       });
     });
+
+    it('should start the service with package name', function() {
+      expect(PushLink.start).toBeDefined();
+      expect(typeof PushLink.start).toBe('function');
+
+      var successCallback = function(){};
+      var errorCallback = function(){};
+
+      PushLink.start('package-name-foo','api-key', 'device-id', successCallback, errorCallback);
+
+      checkCallsPushLink('start', successCallback, errorCallback, {
+        packageName: 'package-name-foo',
+        apiKey: 'api-key',
+        deviceId: 'device-id'
+      });
+    });
+
   });
 };
