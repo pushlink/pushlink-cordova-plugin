@@ -66,7 +66,7 @@ PushLink.prototype.start = function start(packageName, apiKey, deviceId, success
   }
 
   if (typeof packageName === 'string') {
-    console.warn('[PUSHLINK] the packageName parameter is deprecated. Please pass null or undefined as the first argument');
+    console.warn('[PUSHLINK] The packageName parameter is deprecated. From now on Please pass null/undefined as the first argument OR pass a single object of options. Check documentation.');
   }
 
   cordovaExec('start', successCallback, errorCallback, {
