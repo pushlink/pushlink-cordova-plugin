@@ -3,13 +3,13 @@
  * @see module:PushLink
  */
 
-var cordovaExec = function(action, successCallback, errorCallback, arg) {
+function cordovaExec(action, successCallback, errorCallback, arg) {
   'use strict';
   var args = (arg != null) ? [arg] : [];
   cordova.exec(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', action, args);
 };
 
-var pushLinkOnResumeCallback = function() {
+function pushLinkOnResumeCallback() {
   'use strict';
   cordovaExec('setCurrentActivity');
 };
@@ -19,38 +19,55 @@ var pushLinkOnResumeCallback = function() {
  * @constructor
  * @exports PushLink
  */
-var PushLink = function() {
-  'use strict';
-  /** The NINJA strategy
-   * @see module:PushLink#setCurrentStrategy
-   */
-  this.NINJA = 'NINJA';
+function PushLink() {
+}
 
-  /** The STATUS_BAR strategy
-   * @see module:PushLink#setCurrentStrategy
-   */
-  this.STATUS_BAR = 'STATUS_BAR';
+/** The NINJA strategy
+ * @see module:PushLink#setCurrentStrategy
+ */
+PushLink.prototype.NINJA = 'NINJA';
 
-  /** The ANNOYING_POPUP strategy
-   * @see module:PushLink#setCurrentStrategy
-   */
-  this.ANNOYING_POPUP = 'ANNOYING_POPUP';
+/** The STATUS_BAR strategy
+ * @see module:PushLink#setCurrentStrategy
+ */
+PushLink.prototype.STATUS_BAR = 'STATUS_BAR';
 
-  /** The FRIENDLY_POPUP strategy
-   * @see module:PushLink#setCurrentStrategy
-   */
-  this.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
-};
+/** The ANNOYING_POPUP strategy
+ * @see module:PushLink#setCurrentStrategy
+ */
+PushLink.prototype.ANNOYING_POPUP = 'ANNOYING_POPUP';
+
+/** The FRIENDLY_POPUP strategy
+ * @see module:PushLink#setCurrentStrategy
+ */
+PushLink.prototype.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
 
 /**
  * Starts PushLink connection
+ * @param {string} pacakgeName - The package name of your app
  * @param {string} apiKey - Your PushLink API key
  * @param {string} deviceId - The device id
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.start = function(apiKey, deviceId, successCallback, errorCallback) {
+PushLink.prototype.start = function start(packageName, apiKey, deviceId, successCallback, errorCallback) {
   'use strict';
+
+  if (packageName !== null && typeof packageName === 'object') {
+    if (arguments.length > 1) {
+      throw new Error('Invalid number of arguments: start() should be called with a single object of options')
+    }
+
+    var options = packageName;
+    apiKey = options.apiKey;
+    deviceId = options.deviceId;
+    successCallback = options.successCallback || null;
+    errorCallback = options.errorCallback || null;
+  }
+
+  if (typeof packageName === 'string') {
+    console.warn('[PUSHLINK] the packageName parameter is deprecated. Please pass null or undefined as the first argument');
+  }
 
   cordovaExec('start', successCallback, errorCallback, {
     apiKey: apiKey,

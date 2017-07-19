@@ -12,11 +12,11 @@ The plugin exposes a global `window.PushLink` object, so there is no need to ins
 
 On your main `.js` file, you can call:
 
- ```javascript
+```javascript
 PushLink.start('com.myapp', 'my pushlink api key', 'device id', function() {
   console.log('PushLink started successfully');
 },
 function(error) {
   console.log('An error occurred.');
 });
- ```
+```

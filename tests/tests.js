@@ -31,9 +31,30 @@ exports.defineAutoTests = function() {
       expect(PushLink.start).toBeDefined();
       expect(typeof PushLink.start).toBe('function');
 
-      PushLink.start('api-key', 'device-id', null, null);
+      PushLink.start('com.package.name.MyApp', 'api-key', 'device-id', null, null);
 
       checkCallsPushLink('start', null, null, {
+        apiKey: 'api-key',
+        deviceId: 'device-id'
+      });
+    });
+
+    it('should start the service passing an object as argument', function() {
+      expect(PushLink.start).toBeDefined();
+      expect(typeof PushLink.start).toBe('function');
+
+      var successCallback = function success() { };
+      var errorCallback = function error() { };
+
+      PushLink.start({
+        apiKey: 'api-key',
+        deviceId: 'device-id',
+        successCallback:
+        successCallback,
+        errorCallback: errorCallback
+      });
+
+      checkCallsPushLink('start', successCallback, errorCallback, {
         apiKey: 'api-key',
         deviceId: 'device-id'
       });
