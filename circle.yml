@@ -5,6 +5,8 @@ machine:
     PATH: $PATH:$HOME/$CIRCLE_PROJECT_REPONAME/node_modules/.bin
   java:
     version: oraclejdk8
+  node:
+    version: stable
 
 dependencies:
   override:
