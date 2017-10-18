@@ -10,7 +10,7 @@ $ phonegap plugin add pushlink-cordova-plugin
 
 | Jar File | Cordova| Comments|
 | ------------- | ------------- | ------------- |
-| pushlink-android-5.5.2 | `Not released yet` | . |
+| pushlink-android-5.5.2 | pushlink-phonegap-6.0.2 | [Works on Android 7](https://www.pushlink.com/docs.xhtml#android7). CUSTOM strategy not included. |
 | pushlink-android-5.5.0 | pushlink-phonegap-6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-phonegap/issues/10) |
 | pushlink-android-5.5.0 | pushlink-phonegap-5.5.0 | . |
 | pushlink-android-5.4.4 | pushlink-phonegap-5.4.4 | . | 
