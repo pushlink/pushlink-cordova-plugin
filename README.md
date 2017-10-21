@@ -1,4 +1,4 @@
-# PushLink - PhoneGap / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master)
+# PushLink - Phonegap / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master)
 
 ## Installation
 
@@ -14,6 +14,12 @@ $ phonegap plugin add pushlink-cordova-plugin
 | pushlink-android-5.5.0 | pushlink-phonegap-6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-phonegap/issues/10) |
 | pushlink-android-5.5.0 | pushlink-phonegap-5.5.0 | . |
 | pushlink-android-5.4.4 | pushlink-phonegap-5.4.4 | . | 
+
+## Android 7
+
+Only pushlink-phonegap-6.0.2 or higer works on Android 7. 
+
+Also, you need o to add a [file provider](https://www.pushlink.com/docs.xhtml#android7) in AndroidManifest.xml.
 
 ## Usage
 
@@ -36,6 +42,12 @@ PushLink.start({
 });
 
 ```
+
+## Troubleshooting
+
+Getting `successCallback` called doesn't mean that all is done. If you don't see your device in the installations tabs of the web administration, maybe there is a misconfiguration or something else.
+
+Use `adb logcat | grep PUSHLINK` to check what's going on. If you can't solve the problem by yourself, please contact the support.
 
 ## Help & Support
 
