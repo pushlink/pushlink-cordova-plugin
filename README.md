@@ -17,9 +17,9 @@ $ phonegap plugin add pushlink-cordova-plugin
 
 ## Android 7
 
-Only pushlink-phonegap-6.0.2 or higer works on Android 7. 
+Only `pushlink-phonegap-6.0.2` or higer works on Android 7. 
 
-Also, you need o to add a [file provider](https://www.pushlink.com/docs.xhtml#android7) in AndroidManifest.xml.
+Also, you need to add a [file provider](https://www.pushlink.com/docs.xhtml#android7) in AndroidManifest.xml.
 
 ## Usage
 
