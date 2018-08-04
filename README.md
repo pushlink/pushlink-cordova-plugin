@@ -1,5 +1,7 @@
 # PushLink / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master)
 
+Source code for https://www.npmjs.com/package/pushlink-cordova-plugin
+
 ## Installation
 
 ```
