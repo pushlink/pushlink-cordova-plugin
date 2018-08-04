@@ -50,5 +50,5 @@ Use `adb logcat | grep PUSHLINK` to check what's going on. If you can't solve th
 
 Always feel free to drop a line to support at pushlink dot com or visit our [support](https://www.pushlink.com/support.xhtml).
 
-Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-cordova/issues) and [pull requests](https://github.com/pushlink/pushlink-cordova/pulls)
+Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-cordova-plugin/issues) and [pull requests](https://github.com/pushlink/pushlink-cordova-plugin/pulls)
 
