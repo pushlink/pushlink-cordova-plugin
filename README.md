@@ -1,4 +1,4 @@
-# PushLink / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-cordova/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-cordova/tree/master)
+# PushLink / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master)
 
 ## Installation
 
@@ -8,11 +8,11 @@ $ cordova plugin add pushlink-cordova-plugin
 
 ## Compatibility Matrix
 
-| pushlink | pushlink-cordova-plugin | Comments|
+| pushlink-android | pushlink-cordova-plugin | Comments|
 | ------------- | ------------- | ------------- |
 | 5.5.3 | 6.0.3 | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included. |
 | 5.5.2 | 6.0.2 | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included. |
-| 5.5.0 | 6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova/issues/10) |
+| 5.5.0 | 6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova-plugin/issues/10) |
 | 5.5.0 | 5.5.0 | . |
 | 5.4.4 | 5.4.4 | . | 
 
