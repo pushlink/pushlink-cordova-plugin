@@ -1,25 +1,20 @@
-# PushLink - Phonegap / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-phonegap/tree/master)
+# PushLink / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-cordova/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-cordova/tree/master)
 
 ## Installation
 
 ```
-$ phonegap plugin add pushlink-cordova-plugin
+$ cordova plugin add pushlink-cordova-plugin
 ```
 
 ## Compatibility Matrix
 
-| Jar File | Cordova| Comments|
+| pushlink | pushlink-cordova-plugin | Comments|
 | ------------- | ------------- | ------------- |
-| pushlink-android-5.5.2 | pushlink-phonegap-6.0.2 | [Works on Android 7](https://www.pushlink.com/docs.xhtml#android7). CUSTOM strategy not included. |
-| pushlink-android-5.5.0 | pushlink-phonegap-6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-phonegap/issues/10) |
-| pushlink-android-5.5.0 | pushlink-phonegap-5.5.0 | . |
-| pushlink-android-5.4.4 | pushlink-phonegap-5.4.4 | . | 
-
-## Android 7
-
-Only `pushlink-phonegap-6.0.2` or higer works on Android 7. 
-
-Also, you need to add a [file provider](https://www.pushlink.com/docs.xhtml#android7) in AndroidManifest.xml.
+| 5.5.3 | 6.0.3 | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included. |
+| 5.5.2 | 6.0.2 | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included. |
+| 5.5.0 | 6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova/issues/10) |
+| 5.5.0 | 5.5.0 | . |
+| 5.4.4 | 5.4.4 | . | 
 
 ## Usage
 
@@ -29,7 +24,7 @@ On your main `.js` file, you can call:
 
 ```javascript
 
-//this new start API was introduced in pushlink-phonegap-6.0.1
+//this new start API was introduced in pushlink-cordova-plugin-6.0.1
 
 var successCallback = function success() { console.log('PushLink started successfully'); };
 var errorCallback = function error() { console.log('An error occurred.'); };
@@ -53,5 +48,5 @@ Use `adb logcat | grep PUSHLINK` to check what's going on. If you can't solve th
 
 Always feel free to drop a line to support at pushlink dot com or visit our [support](https://www.pushlink.com/support.xhtml).
 
-Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-phonegap/issues) and [pull requests](https://github.com/pushlink/pushlink-phonegap/pulls)
+Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-cordova/issues) and [pull requests](https://github.com/pushlink/pushlink-cordova/pulls)
 

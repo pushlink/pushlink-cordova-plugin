@@ -1,7 +1,7 @@
 {
   "name": "pushlink-cordova-plugin",
-  "version": "6.0.2",
-  "description": "PushLink plugin for Cordova/PhoneGap",
+  "version": "6.0.3",
+  "description": "PushLink plugin for Cordova",
   "cordova": {
     "id": "pushlink-cordova-plugin",
     "platforms": [
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pushlink/pushlink-phonegap.git"
+    "url": "git+https://github.com/pushlink/pushlink-cordova.git"
   },
   "keywords": [
     "cordova",
@@ -53,7 +53,7 @@
   "author": "Rodolfo Carvalho <rodolfo.ueg@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pushlink/pushlink-phonegap/issues"
+    "url": "https://github.com/pushlink/pushlink-cordova/issues"
   },
-  "homepage": "https://github.com/pushlink/pushlink-phonegap#readme"
+  "homepage": "https://github.com/pushlink/pushlink-cordova#readme"
 }
