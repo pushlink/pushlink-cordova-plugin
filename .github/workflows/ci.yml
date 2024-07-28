@@ -68,5 +68,31 @@ jobs:
       - name: Run paramedic install
         run: npm i -g github:apache/cordova-paramedic
 
-  
+      - uses: reactivecircus/android-emulator-runner@v2
+        env:
+          system-image-arch: ${{ matrix.versions.system-image-arch == '' && env.default_system-image-arch || matrix.versions.system-image-arch }}
+          system-image-target: ${{ matrix.versions.system-image-target == '' && env.default_system-image-target || matrix.versions.system-image-target }}
+        with:
+          api-level: ${{ matrix.versions.android-api }}
+          target: ${{ env.system-image-target }}
+          arch: ${{ env.system-image-arch }}
+          force-avd-creation: false
+          disable-animations: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          script: echo "Pregenerate the AVD before running Paramedic"
+
+      - uses: reactivecircus/android-emulator-runner@v2
+        env:
+          system-image-arch: ${{ matrix.versions.system-image-arch == '' && env.default_system-image-arch || matrix.versions.system-image-arch }}
+          system-image-target: ${{ matrix.versions.system-image-target == '' && env.default_system-image-target || matrix.versions.system-image-target }}
+          test_config: 'android-${{ matrix.versions.android }}.config.json'
+          paramedic: ${{ endswith(env.repo, '/cordova-paramedic') && 'node main.js' || 'cordova-paramedic' }}
+        with:
+          api-level: ${{ matrix.versions.android-api }}
+          target: ${{ env.system-image-target }}
+          arch: ${{ env.system-image-arch }}
+          force-avd-creation: false
+          disable-animations: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          script: ${{ env.paramedic }} --config ./pr/local/${{ env.test_config }}
  
