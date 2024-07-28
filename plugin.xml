@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="pushlink-cordova-plugin" version="6.0.3">
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="pushlink-cordova-plugin" version="6.0.3">
   <name>PushLink</name>
   <description>PushLink plugin for Cordova</description>
   <author>PushLink (support@pushlink.com)</author>
@@ -9,12 +9,12 @@
   <keywords>cordova,pushlink,android,update</keywords>
 
   <js-module src="www/pushlink.js" name="PushLink">
-    <clobbers target="PushLink"/>
+    <clobbers target="PushLink" />
   </js-module>
 
   <engines>
-    <engine name="cordova-android" version=">=4"/>
-    <engine name="cordova-plugman" version=">=4.2.0"/><!-- needed for gradleReference support -->
+    <engine name="cordova-android" version=">=11" />
+    <engine name="cordova-plugman" version=">=4.2.0" /><!-- needed for gradleReference support -->
   </engines>
 
   <platform name="android">
@@ -22,31 +22,44 @@
       <allow-navigation href="https://www.pushlink.com/*" />
       <allow-navigation href="https://www.push-link.com/*" />
       <feature name="com.pushlink.android">
-        <param name="android-package" value="com.pushlink.android"/>
+        <param name="android-package" value="com.pushlink.android" />
       </feature>
       <feature name="com.pushlink.cordova.PushLinkPlugin">
-        <param name="android-package" value="com.pushlink.cordova.PushLinkPlugin"/>
+        <param name="android-package" value="com.pushlink.cordova.PushLinkPlugin" />
       </feature>
+      <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+      <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />
     </config-file>
 
-    <source-file src="src/android/PushLinkPlugin.java" target-dir="src/com/pushlink/cordova"/>
+    <source-file src="src/android/PushLinkPlugin.java" target-dir="src/com/pushlink/cordova" />
 
     <!-- actions -->
-    <source-file src="src/android/actions/PushLinkPluginAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/StartAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/AddExceptionMetadataAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/AddMetadataAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/DisableExceptionNotificationAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/EnableExceptionNotificationAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/SetIdleAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/SetCurrentStrategyAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/GetCurrentStrategyAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/HasPendingUpdateAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <source-file src="src/android/actions/SetCurrentActivityAction.java" target-dir="src/com/pushlink/cordova/actions"/>
-    <framework src="src/android/pushlink-android.gradle" custom="true" type="gradleReference"/>
+    <source-file src="src/android/actions/PushLinkPluginAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/StartAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/AddExceptionMetadataAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/AddMetadataAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/DisableExceptionNotificationAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/EnableExceptionNotificationAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/SetIdleAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/SetCurrentStrategyAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/GetCurrentStrategyAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/HasPendingUpdateAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <source-file src="src/android/actions/SetCurrentActivityAction.java"
+      target-dir="src/com/pushlink/cordova/actions" />
+    <framework src="src/android/pushlink-android.gradle" custom="true" type="gradleReference" />
   </platform>
 </plugin>

@@ -40,16 +40,10 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "engines": [
-    {
-      "name": "cordova-android",
-      "version": ">=4"
-    },
-    {
-      "name": "cordova-plugman",
-      "version": ">=4.2.0"
-    }
-  ],
+  "engines": {
+    "cordova-android": ">=11",
+    "cordova-plugman": ">=4.2.0"
+  },
   "author": "Rodolfo Carvalho <rodolfo.ueg@gmail.com>",
   "license": "MIT",
   "bugs": {

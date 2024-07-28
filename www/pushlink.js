@@ -4,43 +4,52 @@
  */
 
 function cordovaExec(action, successCallback, errorCallback, arg) {
-  'use strict';
-  var args = (arg != null) ? [arg] : [];
-  cordova.exec(successCallback, errorCallback, 'com.pushlink.cordova.PushLinkPlugin', action, args);
-};
+  "use strict";
+  var args = arg != null ? [arg] : [];
+  cordova.exec(
+    successCallback,
+    errorCallback,
+    "com.pushlink.cordova.PushLinkPlugin",
+    action,
+    args
+  );
+}
 
 function pushLinkOnResumeCallback() {
-  'use strict';
-  cordovaExec('setCurrentActivity');
-};
+  "use strict";
+  cordovaExec("setCurrentActivity");
+}
 
 /**
  * The PushLink object
  * @constructor
  * @exports PushLink
  */
-function PushLink() {
-}
-
-/** The NINJA strategy
- * @see module:PushLink#setCurrentStrategy
- */
-PushLink.prototype.NINJA = 'NINJA';
+function PushLink() {}
 
 /** The STATUS_BAR strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.prototype.STATUS_BAR = 'STATUS_BAR';
+PushLink.STATUS_BAR = "STATUS_BAR";
+PushLink.prototype.STATUS_BAR = PushLink.STATUS_BAR;
 
 /** The ANNOYING_POPUP strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.prototype.ANNOYING_POPUP = 'ANNOYING_POPUP';
+PushLink.ANNOYING_POPUP = "ANNOYING_POPUP";
+PushLink.prototype.ANNOYING_POPUP = PushLink.ANNOYING_POPUP;
 
 /** The FRIENDLY_POPUP strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.prototype.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
+PushLink.FRIENDLY_POPUP = "FRIENDLY_POPUP";
+PushLink.prototype.FRIENDLY_POPUP = PushLink.FRIENDLY_POPUP;
+
+/** The CUSTOM strategy
+ * @see module:PushLink#setCurrentStrategy
+ */
+PushLink.CUSTOM = "CUSTOM";
+PushLink.prototype.CUSTOM = PushLink.CUSTOM;
 
 /**
  * Starts PushLink connection
@@ -50,12 +59,20 @@ PushLink.prototype.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.start = function start(packageName, apiKey, deviceId, successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.start = function start(
+  packageName,
+  apiKey,
+  deviceId,
+  successCallback,
+  errorCallback
+) {
+  "use strict";
 
-  if (packageName !== null && typeof packageName === 'object') {
+  if (packageName !== null && typeof packageName === "object") {
     if (arguments.length > 1) {
-      throw new Error('Invalid number of arguments: start() should be called with a single object of options')
+      throw new Error(
+        "Invalid number of arguments: start() should be called with a single object of options"
+      );
     }
 
     var options = packageName;
@@ -65,13 +82,15 @@ PushLink.prototype.start = function start(packageName, apiKey, deviceId, success
     errorCallback = options.errorCallback || null;
   }
 
-  if (typeof packageName === 'string') {
-    console.warn('[PUSHLINK] The packageName parameter is deprecated. From now on Please pass null/undefined as the first argument OR pass a single object of options. Check documentation.');
+  if (typeof packageName === "string") {
+    console.warn(
+      "[PUSHLINK] The packageName parameter is deprecated. From now on Please pass null/undefined as the first argument OR pass a single object of options. Check documentation."
+    );
   }
 
-  cordovaExec('start', successCallback, errorCallback, {
+  cordovaExec("start", successCallback, errorCallback, {
     apiKey: apiKey,
-    deviceId: deviceId
+    deviceId: deviceId,
   });
   return this;
 };
@@ -84,9 +103,17 @@ PushLink.prototype.start = function start(packageName, apiKey, deviceId, success
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.addExceptionMetadata = function(key, value, successCallback, errorCallback) {
-  'use strict';
-  cordovaExec('addExceptionMetadata', successCallback, errorCallback, {key: key, value: value});
+PushLink.prototype.addExceptionMetadata = function (
+  key,
+  value,
+  successCallback,
+  errorCallback
+) {
+  "use strict";
+  cordovaExec("addExceptionMetadata", successCallback, errorCallback, {
+    key: key,
+    value: value,
+  });
   return this;
 };
 
@@ -98,9 +125,17 @@ PushLink.prototype.addExceptionMetadata = function(key, value, successCallback, 
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.addMetadata = function(key, value, successCallback, errorCallback) {
-  'use strict';
-  cordovaExec('addMetadata', successCallback, errorCallback, {key: key, value: value});
+PushLink.prototype.addMetadata = function (
+  key,
+  value,
+  successCallback,
+  errorCallback
+) {
+  "use strict";
+  cordovaExec("addMetadata", successCallback, errorCallback, {
+    key: key,
+    value: value,
+  });
   return this;
 };
 
@@ -109,9 +144,12 @@ PushLink.prototype.addMetadata = function(key, value, successCallback, errorCall
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.enableExceptionNotification = function(successCallback, errorCallback) {
-  'use strict';
-  cordovaExec('enableExceptionNotification', successCallback, errorCallback);
+PushLink.prototype.enableExceptionNotification = function (
+  successCallback,
+  errorCallback
+) {
+  "use strict";
+  cordovaExec("enableExceptionNotification", successCallback, errorCallback);
   return this;
 };
 
@@ -120,54 +158,68 @@ PushLink.prototype.enableExceptionNotification = function(successCallback, error
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.disableExceptionNotification = function(successCallback, errorCallback) {
-  'use strict';
-  cordovaExec('disableExceptionNotification', successCallback, errorCallback);
+PushLink.prototype.disableExceptionNotification = function (
+  successCallback,
+  errorCallback
+) {
+  "use strict";
+  cordovaExec("disableExceptionNotification", successCallback, errorCallback);
   return this;
 };
 
 /**
  * This method sets the current notification strategy.
- * @param {string} strategy - the strategy name. Valid values are PushLink.STATUS_BAR, PushLink.FRIENDLY_POPUP, PushLink.ANNOYING_POPUP or PushLink.NINJA
- * @param {object} properties - the properties for the current strategy **TODO describe the objects**
+ * @param {string} strategy - the strategy name. Valid values are PushLink.STATUS_BAR, PushLink.FRIENDLY_POPUP, PushLink.ANNOYING_POPUP
+ * @param {object} properties - the properties for the current strategy
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
- * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/AnnoyingPopUpStrategy.html|ANNOYING_POPUP} strategy properties
- * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/FriendlyPopUpStrategy.html|FRIENDLY_POPUP} strategy properties
- * @see {@link https://www.push-link.com/javadoc/javadoc510/com/pushlink/android/StatusBarStrategy.html|STATUS_BAR} strategy properties
- * @see NINJA pop-up has no properties to be set.
+ * @see {@link https://docs.pushlink.com/strategies}
  */
-PushLink.prototype.setCurrentStrategy = function(strategy, properties, successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.setCurrentStrategy = function (
+  strategy,
+  properties,
+  successCallback,
+  errorCallback
+) {
+  "use strict";
 
-  if (typeof properties === 'function') {
+  if (typeof properties === "function") {
     errorCallback = successCallback;
     successCallback = properties;
     properties = {};
-  } else if (typeof properties !== 'object') {
+  } else if (typeof properties !== "object") {
     properties = {};
   }
 
-  if (strategy === PushLink.ANNOYING_POPUP || strategy === PushLink.FRIENDLY_POPUP) {
-    document.addEventListener('resume', pushLinkOnResumeCallback, false);
+  if (
+    strategy === PushLink.ANNOYING_POPUP ||
+    strategy === PushLink.FRIENDLY_POPUP
+  ) {
+    document.addEventListener("resume", pushLinkOnResumeCallback, false);
   } else {
-    document.removeEventListener('resume', pushLinkOnResumeCallback, false);
+    document.removeEventListener("resume", pushLinkOnResumeCallback, false);
   }
 
-  cordovaExec('setCurrentStrategy', successCallback, errorCallback, {strategy: strategy, properties: properties});
+  cordovaExec("setCurrentStrategy", successCallback, errorCallback, {
+    strategy: strategy,
+    properties: properties,
+  });
 
   return this;
 };
 
 /**
- * This method returns StatusBarStrategy or FriendlyPopUpStrategy or AnnoyingPopUpStrategy or NinjaStrategy objects.
+ * This method returns StatusBarStrategy or FriendlyPopUpStrategy or AnnoyingPopUpStrategy.
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.getCurrentStrategy = function(successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.getCurrentStrategy = function (
+  successCallback,
+  errorCallback
+) {
+  "use strict";
 
-  cordovaExec('getCurrentStrategy', successCallback, errorCallback);
+  cordovaExec("getCurrentStrategy", successCallback, errorCallback);
   return this;
 };
 
@@ -176,15 +228,17 @@ PushLink.prototype.getCurrentStrategy = function(successCallback, errorCallback)
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.hasPendingUpdate = function(successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.hasPendingUpdate = function (
+  successCallback,
+  errorCallback
+) {
+  "use strict";
 
-  cordovaExec('hasPendingUpdate', successCallback, errorCallback);
+  cordovaExec("hasPendingUpdate", successCallback, errorCallback);
   return this;
 };
 
 /**
- * Especially useful for NINJA strategy.
  * In order to update your app only when it is idle:
  *
  * 1 - Call PushLink.idle(false) before PushLink.start()
@@ -196,10 +250,10 @@ PushLink.prototype.hasPendingUpdate = function(successCallback, errorCallback) {
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.idle = function(isIdle, successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.idle = function (isIdle, successCallback, errorCallback) {
+  "use strict";
 
-  cordovaExec('idle', successCallback, errorCallback, {idle: isIdle});
+  cordovaExec("idle", successCallback, errorCallback, { idle: isIdle });
   return this;
 };
 
@@ -208,10 +262,10 @@ PushLink.prototype.idle = function(isIdle, successCallback, errorCallback) {
  * @param {function} successCallback - A function to be called if the command succeeded
  * @param {function} errorCallback - A function to be called if the command failed
  */
-PushLink.prototype.getVersion = function(successCallback, errorCallback) {
-  'use strict';
+PushLink.prototype.getVersion = function (successCallback, errorCallback) {
+  "use strict";
 
-  cordovaExec('version', successCallback, errorCallback);
+  cordovaExec("version", successCallback, errorCallback);
   return this;
 };
 
