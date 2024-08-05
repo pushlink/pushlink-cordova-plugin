@@ -86,6 +86,8 @@ jobs:
           system-image-arch: ${{ matrix.versions.system-image-arch == '' && env.default_system-image-arch || matrix.versions.system-image-arch }}
           system-image-target: ${{ matrix.versions.system-image-target == '' && env.default_system-image-target || matrix.versions.system-image-target }}
           test_config: 'android-${{ matrix.versions.android }}.config.json'
+          # Generally, this should automatically work for cordova-paramedic & plugins. If the path is unique, this can be manually changed.
+          test_plugin_path: ${{ endswith(env.repo, '/cordova-paramedic') && './spec/testable-plugin/' || './' }}
           paramedic: ${{ endswith(env.repo, '/cordova-paramedic') && 'node main.js' || 'cordova-paramedic' }}
         with:
           api-level: ${{ matrix.versions.android-api }}
@@ -94,5 +96,5 @@ jobs:
           force-avd-creation: false
           disable-animations: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics
-          script: npm test
+          script: ${{ env.paramedic }} --config ./pr/local/${{ env.test_config }} --plugin ${{ env.test_plugin_path }}
  
