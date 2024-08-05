@@ -1,4 +1,4 @@
-# PushLink / Cordova plugin [![Circle CI](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master.svg?style=svg&circle-token=bb31d76d18c780f6594f35a72d0a3e586914f176)](https://circleci.com/gh/pushlink/pushlink-cordova-plugin/tree/master)
+# PushLink / Cordova plugin [![Build Status](https://github.com/pushlink/pushlink-cordova-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/pushlink/pushlink-cordova-plugin/actions/workflows/ci.yml)
 
 Source code for https://www.npmjs.com/package/pushlink-cordova-plugin
 
@@ -10,13 +10,14 @@ $ cordova plugin add pushlink-cordova-plugin
 
 ## Compatibility Matrix
 
-| pushlink-android | pushlink-cordova-plugin | Comments|
-| ------------- | ------------- | ------------- |
-| 5.5.3 | 6.0.3 | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included. |
-| 5.5.2 | 6.0.2 | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included. |
-| 5.5.0 | 6.0.1 | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova-plugin/issues/10) |
-| 5.5.0 | 5.5.0 | . |
-| 5.4.4 | 5.4.4 | . | 
+| pushlink-android | pushlink-cordova-plugin | Comments                                                                                                                                                               |
+| ---------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 5.6.0            | 6.1.0                   | [Works on Android 12, 13 and 14](https://docs.pushlink.com/android-versions#android-12-13-and-14). Pushlink strategies are now static (e.g. `Pushlink.FRIENDLY_POPUP`) |
+| 5.5.3            | 6.0.3                   | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included.                                                   |
+| 5.5.2            | 6.0.2                   | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included.                                                 |
+| 5.5.0            | 6.0.1                   | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova-plugin/issues/10)                                                                                   |
+| 5.5.0            | 5.5.0                   | .                                                                                                                                                                      |
+| 5.4.4            | 5.4.4                   | .                                                                                                                                                                      |
 
 ## Usage
 
@@ -25,19 +26,21 @@ The plugin exposes a global `window.PushLink` object, so there is no need to ins
 On your main `.js` file, you can call:
 
 ```javascript
-
 //this new start API was introduced in pushlink-cordova-plugin-6.0.1
 
-var successCallback = function success() { console.log('PushLink started successfully'); };
-var errorCallback = function error() { console.log('An error occurred.'); };
+var successCallback = function success() {
+  console.log("PushLink started successfully");
+};
+var errorCallback = function error() {
+  console.log("An error occurred.");
+};
 
 PushLink.start({
-  apiKey: 'api-key',
-  deviceId: 'device-id',
+  apiKey: "api-key",
+  deviceId: "device-id",
   successCallback: successCallback,
-  errorCallback: errorCallback
+  errorCallback: errorCallback,
 });
-
 ```
 
 ## Troubleshooting
@@ -51,4 +54,3 @@ Use `adb logcat | grep PUSHLINK` to check what's going on. If you can't solve th
 Always feel free to drop a line to support at pushlink dot com or visit our [support](https://www.pushlink.com/support.xhtml).
 
 Users are always welcome to contribute with [issues](https://github.com/pushlink/pushlink-cordova-plugin/issues) and [pull requests](https://github.com/pushlink/pushlink-cordova-plugin/pulls)
-
