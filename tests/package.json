@@ -1,12 +1,14 @@
 {
   "name": "pushlink-cordova-plugin-tests",
-  "version": "1.0.0",
-  "main": "tests.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "6.0.3-dev",
+  "description": "",
+  "cordova": {
+    "id": "pushlink-cordova-plugin-tests",
+    "platforms": []
   },
-  "keywords": [],
+  "keywords": [
+    "ecosystem:cordova"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "Apache-2.0"
 }

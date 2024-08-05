@@ -1,6 +1,6 @@
 {
   "name": "pushlink-cordova-plugin",
-  "version": "6.0.3",
+  "version": "6.0.3-dev",
   "description": "PushLink plugin for Cordova",
   "cordova": {
     "id": "pushlink-cordova-plugin",
@@ -16,14 +16,16 @@
     "test": "cordova-paramedic --platform android --plugin . --verbose",
     "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild",
     "build:docs": "rm -rf docs/ && jsdoc www/pushlink.js --pedantic --verbose --debug -R README.md -d docs",
-    "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/"
+    "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/",
+    "lint": "eslint ."
   },
   "dependencies": {
     "cordova": "^12.0.0"
   },
   "devDependencies": {
-    "cordova-paramedic": "github:apache/cordova-paramedic",
-    "eslint": "^9.8.0",
+    "@cordova/eslint-config": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-import": "^2.29.1",
     "jsdoc": "^4.0.3",
     "lodash": "^4",
     "xml2js": "^0.6.2"

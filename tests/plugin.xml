@@ -4,7 +4,7 @@
         id="pushlink-cordova-plugin-tests"
         version="6.0.3-dev">
   <name>PushLink Cordova Plugin Tests</name>
-  <license>MIT</license>
+  <license>Apache 2.0</license>
   <js-module src="tests.js" name="tests">
   </js-module>
 </plugin>

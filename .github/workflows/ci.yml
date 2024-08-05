@@ -78,7 +78,7 @@ jobs:
           arch: ${{ env.system-image-arch }}
           force-avd-creation: false
           disable-animations: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics
           script: echo "Pregenerate the AVD before running Paramedic"
 
       - uses: reactivecircus/android-emulator-runner@v2
@@ -93,6 +93,6 @@ jobs:
           arch: ${{ env.system-image-arch }}
           force-avd-creation: false
           disable-animations: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics
           script: npm test
  
