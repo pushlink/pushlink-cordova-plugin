@@ -17,7 +17,7 @@ import com.pushlink.android.Strategy;
 import com.pushlink.android.StrategyEnum;
 import com.pushlink.android.AnnoyingPopUpStrategy; 
 import com.pushlink.android.FriendlyPopUpStrategy; 
-import com.pushlink.android.NinjaStrategy; 
+import com.pushlink.android.CustomStrategy; 
 import com.pushlink.android.StatusBarStrategy;
 
 public class GetCurrentStrategyAction implements PushLinkPluginAction {
@@ -30,8 +30,8 @@ public class GetCurrentStrategyAction implements PushLinkPluginAction {
       properties.put("type", StrategyEnum.ANNOYING_POPUP.name());
     } else if (strategy instanceof FriendlyPopUpStrategy) {
       properties.put("type", StrategyEnum.FRIENDLY_POPUP.name());
-    } else if (strategy instanceof NinjaStrategy) {
-      properties.put("type", StrategyEnum.NINJA.name());
+    } else if (strategy instanceof CustomStrategy) {
+      properties.put("type", StrategyEnum.CUSTOM.name());
     } else if (strategy instanceof StatusBarStrategy) {
       properties.put("type", StrategyEnum.STATUS_BAR.name());
     } else {

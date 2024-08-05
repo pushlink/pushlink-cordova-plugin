@@ -27,12 +27,12 @@
       <feature name="com.pushlink.cordova.PushLinkPlugin">
         <param name="android-package" value="com.pushlink.cordova.PushLinkPlugin" />
       </feature>
-      <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-      <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+      <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     </config-file>
 
     <source-file src="src/android/PushLinkPlugin.java" target-dir="src/com/pushlink/cordova" />

@@ -10,7 +10,7 @@ const checkCallsPushLink = function (action, successCallback, errorCallback, arg
 
 exports.defineAutoTests = function () {
     describe('PushLink object (window.PushLink)', function () {
-        it('should exists', function () {
+        it('should exist', function () {
             expect(window.PushLink).toBeDefined();
             expect(typeof window.PushLink).toBe('object');
         });

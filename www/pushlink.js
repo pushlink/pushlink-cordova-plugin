@@ -30,22 +30,22 @@ function PushLink () {}
 /** The STATUS_BAR strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.STATUS_BAR = 'STATUS_BAR';
+PushLink.prototype.STATUS_BAR = 'STATUS_BAR';
 
 /** The ANNOYING_POPUP strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.ANNOYING_POPUP = 'ANNOYING_POPUP';
+PushLink.prototype.ANNOYING_POPUP = 'ANNOYING_POPUP';
 
 /** The FRIENDLY_POPUP strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
+PushLink.prototype.FRIENDLY_POPUP = 'FRIENDLY_POPUP';
 
 /** The CUSTOM strategy
  * @see module:PushLink#setCurrentStrategy
  */
-PushLink.CUSTOM = 'CUSTOM';
+PushLink.prototype.CUSTOM = 'CUSTOM';
 
 /**
  * Starts PushLink connection
@@ -187,10 +187,7 @@ PushLink.prototype.setCurrentStrategy = function (
         properties = {};
     }
 
-    if (
-        strategy === PushLink.ANNOYING_POPUP ||
-    strategy === PushLink.FRIENDLY_POPUP
-    ) {
+    if (strategy === this.ANNOYING_POPUP || strategy === this.FRIENDLY_POPUP) {
         document.addEventListener('resume', pushLinkOnResumeCallback, false);
     } else {
         document.removeEventListener('resume', pushLinkOnResumeCallback, false);
