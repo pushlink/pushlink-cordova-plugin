@@ -1,6 +1,6 @@
 {
   "name": "pushlink-cordova-plugin",
-  "version": "6.0.3",
+  "version": "6.1.0-dev",
   "description": "PushLink plugin for Cordova",
   "cordova": {
     "id": "pushlink-cordova-plugin",
@@ -12,21 +12,26 @@
     "doc": "docs",
     "test": "tests"
   },
+  "types": "./types/pushlink.d.ts",
   "scripts": {
-    "test": "cordova-paramedic --platform android --plugin . --verbose",
-    "build": "cordova-paramedic --platform android --plugin . --verbose --justbuild",
+    "test:android": "npx github:apache/cordova-paramedic --platform android --plugin . --verbose",
+    "test": "npm run test:android",
+    "build": "npx github:apache/cordova-paramedic --platform android@11 --plugin . --verbose --justbuild",
     "build:docs": "rm -rf docs/ && jsdoc www/pushlink.js --pedantic --verbose --debug -R README.md -d docs",
-    "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/"
+    "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/",
+    "lint": "eslint .",
+    "gen:types": "npx -p typescript tsc www/*.js www/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "dependencies": {
-    "cordova": "^6.0.0"
+    "cordova": "^12.0.0"
   },
   "devDependencies": {
-    "cordova-paramedic": "^0.5.0",
-    "eslint": "^0.24.0",
-    "jsdoc": "^3.4.0",
-    "lodash": "^4.6.1",
-    "xml2js": "^0.4.16"
+    "@cordova/eslint-config": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jsdoc": "^4.0.3",
+    "lodash": "^4",
+    "xml2js": "^0.6.2"
   },
   "repository": {
     "type": "git",
@@ -40,16 +45,10 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "engines": [
-    {
-      "name": "cordova-android",
-      "version": ">=4"
-    },
-    {
-      "name": "cordova-plugman",
-      "version": ">=4.2.0"
-    }
-  ],
+  "engines": {
+    "cordova-android": ">=11",
+    "cordova-plugman": ">=4.2.0"
+  },
   "author": "Rodolfo Carvalho <rodolfo.ueg@gmail.com>",
   "license": "MIT",
   "bugs": {

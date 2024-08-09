@@ -71,7 +71,7 @@ public class SetCurrentStrategyAction implements PushLinkPluginAction {
         }
       break;
 
-      case NINJA:
+      case CUSTOM:
         // no properties to be set
       break;
     }

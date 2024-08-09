@@ -1,0 +1,14 @@
+{
+  "name": "pushlink-cordova-plugin-tests",
+  "version": "6.1.0-dev",
+  "description": "",
+  "cordova": {
+    "id": "pushlink-cordova-plugin-tests",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "Apache-2.0"
+}

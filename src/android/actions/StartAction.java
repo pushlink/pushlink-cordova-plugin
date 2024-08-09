@@ -20,18 +20,9 @@ public class StartAction implements PushLinkPluginAction {
 
   @Override
   public void execute(final CordovaInterface cordova, JSONObject arg, final CallbackContext callbackContext) throws Exception {
-    
     final String apiKey = arg.getString(API_KEY);
     final String deviceId = arg.getString(DEVICE_ID);
-    final String packageName = cordova.getActivity().getApplicationContext().getPackageName();
-
-    int iconId = cordova.getActivity().getResources().getIdentifier(ICON, RESOURCE_DRAWABLE, packageName);
-    if (iconId==0){
-      iconId = cordova.getActivity().getResources().getIdentifier(ICON, RESOURCE_MIPMAP, packageName);
-    }
-    
-    final int appIconId = iconId;
-
+    final int appIconId = cordova.getContext().getApplicationInfo().icon;
 
     cordova.getActivity().runOnUiThread(new Runnable() {
       @Override

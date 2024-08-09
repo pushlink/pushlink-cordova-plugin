@@ -13,7 +13,7 @@ import com.pushlink.android.PushLink;
 public class HasPendingUpdateAction implements PushLinkPluginAction {
   @Override
   public void execute(CordovaInterface cordova, JSONObject arg, CallbackContext callbackContext) throws Exception {
-    Boolean hasPendingUpdate = PushLink.hasPengingUpdate();
+    Boolean hasPendingUpdate = PushLink.hasPendingUpdate();
     Map<String, Object> result = new HashMap<String, Object>();
     result.put("hasPendingUpdate", hasPendingUpdate);
 
