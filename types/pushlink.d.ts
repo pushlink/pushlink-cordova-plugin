@@ -7,6 +7,22 @@ export = _exports;
  */
 declare function PushLink(): void;
 declare class PushLink {
+    /** The STATUS_BAR strategy
+     * @see module:PushLink#setCurrentStrategy
+     */
+    STATUS_BAR: string;
+    /** The ANNOYING_POPUP strategy
+     * @see module:PushLink#setCurrentStrategy
+     */
+    ANNOYING_POPUP: string;
+    /** The FRIENDLY_POPUP strategy
+     * @see module:PushLink#setCurrentStrategy
+     */
+    FRIENDLY_POPUP: string;
+    /** The CUSTOM strategy
+     * @see module:PushLink#setCurrentStrategy
+     */
+    CUSTOM: string;
     /**
      * Starts PushLink connection
      * @param {string} pacakgeName - The package name of your app
@@ -86,10 +102,4 @@ declare class PushLink {
      * @param {function} errorCallback - A function to be called if the command failed
      */
     getVersion(successCallback: Function, errorCallback: Function): this;
-}
-declare namespace PushLink {
-    let STATUS_BAR: string;
-    let ANNOYING_POPUP: string;
-    let FRIENDLY_POPUP: string;
-    let CUSTOM: string;
 }

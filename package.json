@@ -20,7 +20,7 @@
     "build:docs": "rm -rf docs/ && jsdoc www/pushlink.js --pedantic --verbose --debug -R README.md -d docs",
     "version": "npm test && ./bin/bump-version && npm run build:docs && git add -A plugin.xml docs/ tests/ src/",
     "lint": "eslint .",
-    "gen:types": "npx -p typescript tsc www/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
+    "gen:types": "npx -p typescript tsc www/*.js www/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "dependencies": {
     "cordova": "^12.0.0"
