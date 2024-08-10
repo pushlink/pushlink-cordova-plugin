@@ -22,7 +22,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "gen:types": "./node_modules/.bin/tsc www/pushlink.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "prepack": "npm run ensure-version"
+    "prepack": "npm run ensure-version",
+    "prepare": "husky"
   },
   "dependencies": {
     "cordova": "^12.0.0"
@@ -32,7 +33,9 @@
     "eslint": "^8.0.0",
     "eslint-plugin-import": "^2.29.1",
     "fast-xml-parser": "^4.4.1",
+    "husky": "^9.1.4",
     "jsdoc": "^4.0.3",
+    "lint-staged": "^15.2.8",
     "typescript": "^5.5.4"
   },
   "repository": {
@@ -56,5 +59,8 @@
   "bugs": {
     "url": "https://github.com/pushlink/pushlink-cordova-plugin/issues"
   },
-  "homepage": "https://github.com/pushlink/pushlink-cordova-plugin#readme"
+  "homepage": "https://github.com/pushlink/pushlink-cordova-plugin#readme",
+  "lint-staged": {
+    "*.js": ["eslint --fix"]
+  }
 }
