@@ -8,8 +8,8 @@ const { XMLParser, XMLBuilder } = require('fast-xml-parser');
 const rootDir = path.resolve(path.dirname(__filename), '..');
 
 const filePaths = {
-    plugin: [path.resolve(rootDir, 'plugin.xml'), path.resolve(rootDir, 'tests', 'plugin.xml')],
-    java: path.resolve(rootDir, 'src', 'android', 'PushlinkPlugin.java')
+    plugin: ['plugin.xml', 'tests/plugin.xml'],
+    java: 'src/android/PushlinkPlugin.java'
 };
 
 const packageJsonFile = path.join(rootDir, 'package.json');
