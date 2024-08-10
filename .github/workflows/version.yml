@@ -1,0 +1,11 @@
+name: "Publish to NPM"
+on:
+  push: 
+    branches: 
+      - master
+jobs:
+  publish:
+    name: Automatically bumps version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
