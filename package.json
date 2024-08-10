@@ -15,7 +15,7 @@
   "types": "./types/pushlink.d.ts",
   "scripts": {
     "test:android": "npx github:apache/cordova-paramedic --platform android --plugin . --verbose",
-    "test": "npm run test:android",
+    "test": "echo 'No tests to run; If you want to run android tests, execute npm run test:android'",
     "build": "npx github:apache/cordova-paramedic --platform android@11 --plugin . --verbose --justbuild",
     "build:docs": "rm -rf docs/ && jsdoc www/pushlink.js --pedantic --verbose --debug -R README.md -d docs",
     "ensure-version": "./bin/ensure-version && npm run build:docs && npm run gen:types",
