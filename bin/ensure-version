@@ -9,7 +9,7 @@ const rootDir = path.resolve(path.dirname(__filename), '..');
 
 const filePaths = {
     plugin: ['plugin.xml', 'tests/plugin.xml'],
-    java: 'src/android/PushlinkPlugin.java'
+    java: 'src/android/PushLinkPlugin.java'
 };
 
 const packageJsonFile = path.join(rootDir, 'package.json');
