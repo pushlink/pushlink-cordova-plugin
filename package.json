@@ -22,7 +22,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "gen:types": "./node_modules/.bin/tsc www/pushlink.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "prepack": "npm run ensure-version",
+    "prepack": "find . && npm run ensure-version",
     "prepare": "husky"
   },
   "dependencies": {

@@ -1,4 +1,24 @@
 {
   "repositoryUrl": "git@github.com:pushlink/pushlink-cordova-plugin.git",
-  "branches": ["master"]
+  "branches": [
+    "master"
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": ".",
+        "tarballDir": "."
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {"path": "pushlink-cordova-plugin-*.tgz", "name": "pushlink-cordova-plugin.tar.gz", "label": "Source code"}
+        ]
+      }
+    ]
+  ]
 }
