@@ -12,12 +12,12 @@ $ cordova plugin add pushlink-cordova-plugin
 
 | pushlink-android | pushlink-cordova-plugin | Comments                                                                                                                                                               |
 | ---------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 5.6.0            | 6.1.0                   | [Works on Android 12, 13 and 14](https://docs.pushlink.com/android-versions#android-12-13-and-14). Pushlink strategies are now static (e.g. `Pushlink.FRIENDLY_POPUP`) |
-| 5.5.3            | 6.0.3                   | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included.                                                   |
-| 5.5.2            | 6.0.2                   | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included.                                                 |
-| 5.5.0            | 6.0.1                   | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova-plugin/issues/10)                                                                                   |
-| 5.5.0            | 5.5.0                   | .                                                                                                                                                                      |
-| 5.4.4            | 5.4.4                   | .                                                                                                                                                                      |
+| 5.6.0            | 6.1.0                   | [Works on Android 12, 13 and 14](https://docs.pushlink.com/android-versions#android-12-13-and-14).<br>We have enabled setting the `CUSTOM` strategy, but you are responsible to implement a BroadcastReceiver. See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/v6.1.0) |
+| 5.5.3            | 6.0.3                   | [Works on Android 8](https://pushlink.gitbook.io/docs/android-7-and-8#android-8-oreo). CUSTOM strategy not included. See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/6.0.3)                                                  |
+| 5.5.2            | 6.0.2                   | [Works on Android 7](https://pushlink.gitbook.io/docs/android-7-and-8#android-7-nougat). CUSTOM strategy not included. See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/6.0.2)                                                |
+| 5.5.0            | 6.0.1                   | [Fixed for Android 6](https://github.com/pushlink/pushlink-cordova-plugin/issues/10). See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/6.0.1)                                                                                   |
+| 5.5.0            | 5.5.0                   | See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/5.5.0)                                                                                                                                                                      |
+| 5.4.4            | 5.4.4                   | See [release notes](https://github.com/pushlink/pushlink-cordova-plugin/releases/tag/5.4.4)                                                                                                                                                                      |
 
 ## Usage
 
