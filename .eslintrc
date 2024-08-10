@@ -6,7 +6,7 @@
   },
   "overrides": [
     {
-      "files": ["tests/**/*.js", "bin/bump-version"],
+      "files": ["tests/**/*.js", "bin/ensure-version"],
       "extends": "@cordova/eslint-config/node-tests"
     }
   ]

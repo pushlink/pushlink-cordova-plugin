@@ -16,7 +16,7 @@ const packageJsonFile = path.join(rootDir, 'package.json');
 
 const regexes = {
     plugin: /[\d.]+(-dev)?/g,
-    java: /(\s*public static final String VERSION = ")([\d.]+)(";)/g
+    java: /(\s*public static final String VERSION = ")(.+?)(";)/g
 };
 
 const version = JSON.parse(fs.readFileSync(packageJsonFile)).version;
@@ -40,7 +40,7 @@ function updatePluginVersion (version, filePath) {
     const config = parser.parse(configContent);
 
     if (config.plugin.attributes.version === version) {
-        console.log('Skipping updating %s; version is identical', filePath);
+        console.log('Skipping updating %s; version is up-to-date', filePath);
     } else {
         console.log('Updating %s: set version=%s', filePath, version);
         config.plugin.attributes.version = version;
@@ -66,9 +66,8 @@ function updateFileRegex (id, versionPos) {
 
     if (newContents === contents) {
         console.log(
-            'Skipping %s update. Same version %s',
-            path.basename(filePath),
-            version
+            'Skipping updating %s; version is up-to-date',
+            filePath
         );
         return;
     } else {
