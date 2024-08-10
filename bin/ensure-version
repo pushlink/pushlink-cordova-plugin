@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+'use strict';
+
+const path = require('path');
+const fs = require('fs');
+const { XMLParser, XMLBuilder } = require('fast-xml-parser');
+
+const rootDir = path.dirname(__dirname);
+
+const filePaths = {
+    plugin: [path.join(rootDir, 'plugin.xml'), path.join(rootDir, 'tests', 'plugin.xml')],
+    java: path.join(rootDir, 'src', 'android', 'PushlinkPlugin.java')
+};
+
+const packageJsonFile = path.join(rootDir, 'package.json');
+
+const regexes = {
+    plugin: /[\d.]+(-dev)?/g,
+    java: /(\s*public static final String VERSION = ")(.+?)(";)/g
+};
+
+const version = JSON.parse(fs.readFileSync(packageJsonFile)).version;
+
+console.log('package.json version: ' + version);
+
+function updatePluginVersion (version, filePath) {
+    const options = {
+        ignoreAttributes: false,
+        attributesGroupName: 'attributes',
+        attributeNamePrefix: ''
+    };
+
+    const parser = new XMLParser(options);
+    const builder = new XMLBuilder({
+        ...options,
+        format: true
+    });
+
+    let configContent = fs.readFileSync(filePath, 'utf-8');
+    const config = parser.parse(configContent);
+
+    if (config.plugin.attributes.version === version) {
+        console.log('Skipping updating %s; version is up-to-date', filePath);
+    } else {
+        console.log('Updating %s: set version=%s', filePath, version);
+        config.plugin.attributes.version = version;
+        configContent = builder.build(config);
+
+        fs.writeFileSync(filePath, configContent, { encoding: 'utf-8' });
+    }
+}
+
+function updateFileRegex (id, versionPos) {
+    const filePath = filePaths[id];
+    const contents = fs.readFileSync(filePath, 'utf-8');
+
+    const newContents = contents.replace(regexes[id], function () {
+        const args = Array.prototype.slice.call(
+            arguments,
+            1,
+            arguments.length - 2
+        );
+        args.splice(versionPos, 1, version);
+        return args.join('');
+    });
+
+    if (newContents === contents) {
+        console.log(
+            'Skipping updating %s; version is up-to-date',
+            filePath
+        );
+        return;
+    } else {
+        if (process.env.DEBUG === 'true') {
+            console.log(newContents);
+        }
+        console.log('Writing file %s', path.basename(filePath));
+    }
+
+    fs.writeFileSync(filePath, newContents, { encoding: 'utf-8' });
+}
+
+filePaths.plugin.forEach(updatePluginVersion.bind(undefined, version));
+updateFileRegex('java', 1);

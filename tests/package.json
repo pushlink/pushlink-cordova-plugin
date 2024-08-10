@@ -1,6 +1,6 @@
 {
   "name": "pushlink-cordova-plugin-tests",
-  "version": "6.1.0-dev",
+  "version": "0.0.1",
   "description": "",
   "cordova": {
     "id": "pushlink-cordova-plugin-tests",
